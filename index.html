@@ -1,0 +1,1999 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>ARABIAN CARTHAGO KEBAB – Kebab & Fast Food · Cartagena</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet"/>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<style>
+:root{
+  --orange:#C0622A;--red:#8B2500;--dark:#1C0F07;--dark2:#2E1A10;
+  --cream:#FDF6EE;--light:#F5EBE0;--gray:#7A6658;--white:#FFFFFF;
+  --terracotta:#C0622A;--sand:#E8D5B7;--warm:#F0DCC8;--spice:#8B3A0F;
+  --green:#22C55E;--blue:#3B82F6;--yellow:#FACC15;
+  --fd:'Playfair Display',serif;--fb:'Inter',sans-serif;
+  --r:18px;--sh:0 8px 40px rgba(140,60,20,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--dark2)}
+
+/* LANG BAR */
+#lang-bar{background:var(--dark);color:#fff;display:flex;align-items:center;justify-content:center;gap:8px;padding:7px 20px;font-size:12px;font-weight:700;position:sticky;top:0;z-index:1000;flex-wrap:wrap}
+.lbtn{background:transparent;border:1.5px solid rgba(192,98,42,.4);color:#fff;padding:4px 14px;border-radius:30px;cursor:pointer;font-weight:700;font-size:13px;transition:all .2s;display:flex;align-items:center;gap:6px}
+.lbtn:hover,.lbtn.active{background:var(--terracotta);border-color:var(--terracotta)}
+#abtn{display:none}
+
+/* NAV */
+nav{background:var(--white);display:flex;align-items:center;justify-content:space-between;padding:14px 5%;box-shadow:0 2px 20px rgba(0,0,0,.06);position:sticky;top:35px;z-index:900}
+.nl{font-family:'Playfair Display',serif;font-size:22px;color:var(--spice);letter-spacing:1px;font-weight:800}
+.nl span{color:var(--terracotta)}
+.nlinks{display:flex;gap:22px;list-style:none}
+.nlinks a{text-decoration:none;color:var(--dark2);font-weight:500;font-size:13px;transition:color .2s;font-family:'Inter',sans-serif}
+.nlinks a:hover{color:var(--terracotta)}
+.ncta{background:var(--terracotta);color:#fff;padding:10px 22px;border-radius:30px;font-weight:700;text-decoration:none;font-size:13px;transition:background .2s;font-family:'Inter',sans-serif}
+.ncta:hover{background:var(--spice)}
+.hbg{display:none;background:none;border:none;cursor:pointer;font-size:22px;color:var(--dark2)}
+@media(max-width:768px){.nlinks{display:none}.hbg{display:block}}
+.mmenu{display:none;position:fixed;inset:0;background:rgba(0,0,0,.97);z-index:800;flex-direction:column;align-items:center;justify-content:center;gap:28px}
+.mmenu.open{display:flex}
+.mmenu a{color:#fff;font-size:28px;font-family:'Playfair Display',serif;letter-spacing:2px;text-decoration:none;font-weight:700}
+.mmenu a:hover{color:var(--terracotta)}
+.mmclose{position:absolute;top:18px;right:20px;background:none;border:none;color:#fff;font-size:26px;cursor:pointer}
+
+/* HERO */
+#home{background:linear-gradient(160deg,#1C0F07 0%,#3D1800 60%,#5A2A10 100%);min-height:95vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:80px 20px}
+#home::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 65% 35%,rgba(192,98,42,.22) 0%,transparent 65%)}
+#home::after{content:'';position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(transparent,var(--cream));pointer-events:none}
+.hi{position:relative;z-index:1;max-width:680px;margin:0 auto}
+.htag{display:inline-block;background:rgba(192,98,42,.15);border:1.5px solid rgba(192,98,42,.6);color:#E8C09A;border-radius:30px;padding:6px 20px;font-size:11px;font-weight:600;letter-spacing:3px;margin-bottom:24px;font-family:'Inter',sans-serif;text-transform:uppercase}
+.htitle{font-family:'Playfair Display',serif;font-size:clamp(48px,10vw,110px);color:#fff;line-height:1.05;letter-spacing:2px;font-weight:800}
+.htitle span{color:#E8A87C}
+.hero-img{width:clamp(180px,28vw,280px);height:clamp(180px,28vw,280px);border-radius:50%;object-fit:cover;border:3px solid rgba(192,98,42,.6);margin:24px auto;display:block;box-shadow:0 0 80px rgba(192,98,42,.25),0 20px 60px rgba(0,0,0,.4);background:rgba(192,98,42,.1)}
+.hero-ph{width:clamp(180px,28vw,280px);height:clamp(180px,28vw,280px);border-radius:50%;border:3px solid rgba(192,98,42,.5);margin:24px auto;display:flex;align-items:center;justify-content:center;font-size:80px;background:rgba(192,98,42,.08);box-shadow:0 0 80px rgba(192,98,42,.15)}
+.hsub{color:rgba(255,255,255,.65);font-size:16px;margin:16px 0 32px;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.8;font-family:'Inter',sans-serif;font-weight:300}
+.hbtns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.bp{background:var(--terracotta);color:#fff;padding:14px 32px;border-radius:40px;font-weight:600;font-size:15px;text-decoration:none;border:none;cursor:pointer;transition:all .3s;font-family:'Inter',sans-serif;letter-spacing:.5px}
+.bp:hover{background:var(--spice);transform:translateY(-3px);box-shadow:0 12px 30px rgba(192,98,42,.4)}
+.bo{border:1.5px solid rgba(255,255,255,.3);color:#fff;padding:14px 32px;border-radius:40px;font-weight:500;font-size:15px;text-decoration:none;transition:all .3s;font-family:'Inter',sans-serif}
+.bo:hover{border-color:var(--terracotta);background:rgba(192,98,42,.12)}
+.hinfo{margin-top:40px;color:rgba(255,255,255,.4);font-size:12px;display:flex;gap:22px;justify-content:center;flex-wrap:wrap;font-family:'Inter',sans-serif}
+.hinfo span{display:flex;align-items:center;gap:6px}
+
+/* SECTIONS */
+section{padding:90px 5%}
+.sh{text-align:center;margin-bottom:60px}
+.stag{display:inline-block;background:rgba(192,98,42,.1);color:var(--terracotta);border-radius:30px;padding:5px 18px;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;margin-bottom:14px;font-family:'Inter',sans-serif}
+.stitle{font-family:'Playfair Display',serif;font-size:clamp(32px,4.5vw,52px);color:var(--dark2);letter-spacing:1px;font-weight:800;line-height:1.15}
+.stitle span{color:var(--terracotta)}
+.ssub{color:var(--gray);font-size:15px;max-width:480px;margin:12px auto 0;line-height:1.8;font-family:'Inter',sans-serif;font-weight:400}
+
+/* SERVICES */
+#services{background:var(--light)}
+.sv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:22px}
+.sv-card{background:var(--white);border-radius:20px;padding:32px 22px;text-align:center;box-shadow:var(--sh);transition:transform .3s,box-shadow .3s}
+.sv-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(140,60,20,.16)}
+.sv-ico{font-size:44px;margin-bottom:14px;display:block}
+.sv-name{font-family:'Playfair Display',serif;font-size:19px;letter-spacing:.5px;margin-bottom:10px;font-weight:700;color:var(--dark2)}
+.sv-desc{font-size:13px;color:var(--gray);line-height:1.7;font-family:'Inter',sans-serif}
+
+/* MENU */
+#menu{background:var(--cream)}
+.mf{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:36px}
+.fb{padding:8px 22px;border-radius:30px;border:1.5px solid #DDD;background:transparent;cursor:pointer;font-weight:500;font-size:12px;color:var(--dark2);transition:all .2s;font-family:'Inter',sans-serif;letter-spacing:.5px}
+.fb.active,.fb:hover{background:var(--terracotta);border-color:var(--terracotta);color:#fff}
+.mg{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:26px}
+.mc{background:var(--white);border-radius:20px;overflow:hidden;box-shadow:var(--sh);transition:transform .3s,box-shadow .3s}
+.mc:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(140,60,20,.15)}
+.mci{width:100%;height:200px;background:linear-gradient(135deg,#C0622A,#8B2500);display:flex;align-items:center;justify-content:center;font-size:60px;position:relative;overflow:hidden}
+.mci img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.mci .emo{position:relative;z-index:1}
+.mcb{padding:18px}
+.mccat{font-size:10px;font-weight:600;color:var(--terracotta);text-transform:uppercase;letter-spacing:2px;font-family:'Inter',sans-serif}
+.mcn{font-family:'Playfair Display',serif;font-size:20px;margin:5px 0 7px;font-weight:700;color:var(--dark2)}
+.mcd{font-size:13px;color:var(--gray);margin-bottom:12px;line-height:1.6;font-family:'Inter',sans-serif}
+.mcf{display:flex;align-items:center;justify-content:space-between}
+.mcp{font-family:'Playfair Display',serif;font-size:21px;color:var(--spice);font-weight:700}
+.ob{background:var(--terracotta);color:#fff;border:none;padding:8px 18px;border-radius:30px;font-weight:600;font-size:12px;cursor:pointer;transition:all .2s;font-family:'Inter',sans-serif}
+.ob:hover{background:var(--spice);transform:translateY(-1px)}
+
+/* GALLERY */
+#gallery{background:var(--white)}
+.gg{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+.gi{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px;cursor:pointer;transition:transform .3s,box-shadow .3s}
+.gi:hover{transform:scale(1.03);box-shadow:0 14px 40px rgba(0,0,0,.15)}
+.ge{grid-column:1/-1;text-align:center;color:var(--gray);padding:40px;font-size:14px;opacity:.6;font-family:'Inter',sans-serif}
+
+/* COMBOS */
+#combos{background:var(--light)}
+.cg{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:26px}
+.cc{background:var(--white);border-radius:20px;overflow:hidden;box-shadow:var(--sh);display:flex;flex-direction:column}
+.cci{width:100%;height:160px;background:linear-gradient(135deg,#C0622A,#8B2500);display:flex;align-items:center;justify-content:center;font-size:52px;position:relative}
+.ccb{position:absolute;top:12px;right:12px;background:var(--spice);color:#fff;font-weight:700;font-size:11px;padding:4px 12px;border-radius:20px;font-family:'Inter',sans-serif}
+.ccbody{padding:20px;flex:1}
+.ccn{font-family:'Playfair Display',serif;font-size:20px;margin-bottom:7px;font-weight:700;color:var(--dark2)}
+.ccd{font-size:13px;color:var(--gray);margin-bottom:14px;line-height:1.6;font-family:'Inter',sans-serif}
+.ccp{font-family:'Playfair Display',serif;font-size:24px;color:var(--spice);font-weight:700}
+
+/* ABOUT */
+#about{background:var(--white)}
+.ag{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+@media(max-width:768px){.ag{grid-template-columns:1fr}}
+.av{border-radius:24px;height:360px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;overflow:hidden;position:relative;background:linear-gradient(135deg,var(--dark),#3D1800)}
+.av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:24px}
+.avo{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(28,15,7,.55);border-radius:24px}
+.avt{font-family:'Playfair Display',serif;font-size:36px;color:#E8C09A;letter-spacing:2px;font-weight:800}
+.at .lbl{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--terracotta);margin-bottom:12px;font-family:'Inter',sans-serif}
+.at h2{font-family:'Playfair Display',serif;font-size:38px;letter-spacing:.5px;margin-bottom:16px;font-weight:800;line-height:1.2}
+.at p{color:var(--gray);line-height:1.9;margin-bottom:12px;font-size:14px;font-family:'Inter',sans-serif}
+.aff{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
+.af{background:var(--cream);border-radius:14px;padding:16px;display:flex;align-items:flex-start;gap:12px}
+.afi{font-size:22px}
+.afl{font-weight:700;font-size:12px;font-family:'Playfair Display',serif}
+.afd{font-size:11px;color:var(--gray);margin-top:3px;font-family:'Inter',sans-serif}
+
+/* CONTACT */
+#contact{background:var(--dark);color:#fff}
+#contact .stitle{color:#fff}
+.ctg{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+@media(max-width:768px){.ctg{grid-template-columns:1fr}}
+.cti h3{font-family:'Playfair Display',serif;font-size:28px;margin-bottom:24px;letter-spacing:.5px;color:#E8C09A;font-weight:700}
+.ci{display:flex;align-items:center;gap:14px;margin-bottom:16px;padding:16px;background:rgba(255,255,255,.05);border-radius:14px}
+.cic{font-size:22px}
+.cil{font-size:11px;color:rgba(255,255,255,.4);font-weight:600;text-transform:uppercase;letter-spacing:1px;font-family:'Inter',sans-serif}
+.civ{font-weight:600;font-size:15px;color:#fff;text-decoration:none;font-family:'Inter',sans-serif}
+.civ:hover{color:#E8C09A}
+.mapbox{background:rgba(255,255,255,.05);border-radius:16px;height:240px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;color:rgba(255,255,255,.35);font-size:13px;margin-top:18px;border:1px solid rgba(255,255,255,.08)}
+.mpcode{font-family:monospace;background:rgba(192,98,42,.2);color:#E8C09A;padding:3px 12px;border-radius:8px;font-size:15px;font-weight:700}
+.cf label{color:rgba(255,255,255,.55);font-size:12px;display:block;margin-bottom:5px;font-weight:600;font-family:'Inter',sans-serif}
+.cf input,.cf textarea{width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,.1);border-radius:12px;background:rgba(255,255,255,.06);color:#fff;font-family:'Inter',sans-serif;font-size:13px;outline:none;transition:border-color .2s;margin-bottom:14px}
+.cf input:focus,.cf textarea:focus{border-color:var(--terracotta)}
+.cf textarea{min-height:100px;resize:vertical}
+.cf input::placeholder,.cf textarea::placeholder{color:rgba(255,255,255,.2)}
+.sbtn{width:100%;background:var(--terracotta);color:#fff;border:none;padding:14px;border-radius:14px;font-size:15px;font-weight:600;cursor:pointer;transition:all .2s;font-family:'Inter',sans-serif}
+.sbtn:hover{background:var(--spice)}
+.smsg{display:none;text-align:center;padding:16px;color:var(--green);font-weight:600;font-size:14px;font-family:'Inter',sans-serif}
+
+/* FOOTER */
+footer{background:#110800;color:rgba(255,255,255,.35);text-align:center;padding:36px 20px;font-size:12px;font-family:'Inter',sans-serif}
+.fl{font-family:'Playfair Display',serif;font-size:28px;color:#E8C09A;letter-spacing:2px;margin-bottom:10px;font-weight:700}
+.flinks{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin:12px 0}
+.flinks a{color:rgba(255,255,255,.3);text-decoration:none;font-size:12px;font-family:'Inter',sans-serif}
+.flinks a:hover{color:#E8C09A}
+
+/* LIGHTBOX */
+#lb{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:3500;align-items:center;justify-content:center}
+#lb.open{display:flex}
+#lb img{max-width:90vw;max-height:90vh;border-radius:16px;object-fit:contain}
+#lb-x{position:absolute;top:16px;right:20px;background:none;border:none;color:#fff;font-size:30px;cursor:pointer}
+
+/* ORDER MODAL */
+.mov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:2000;align-items:center;justify-content:center}
+.mov.open{display:flex}
+.mbox{background:var(--white);border-radius:24px;padding:36px;width:90%;max-width:460px;position:relative;max-height:90vh;overflow-y:auto}
+.mx{position:absolute;top:14px;right:14px;background:none;border:none;font-size:20px;cursor:pointer;color:var(--gray)}
+.mt{font-family:'Playfair Display',serif;font-size:24px;margin-bottom:18px;color:var(--spice);font-weight:700}
+.fg{margin-bottom:14px}
+.fg label{display:block;font-weight:600;font-size:12px;margin-bottom:5px;color:var(--dark2);font-family:'Inter',sans-serif}
+.fg input,.fg textarea,.fg select{width:100%;padding:12px 15px;border:1.5px solid #E8DDD5;border-radius:12px;font-family:'Inter',sans-serif;font-size:13px;outline:none;transition:border-color .2s}
+.fg input:focus,.fg textarea:focus{border-color:var(--terracotta)}
+.fg textarea{min-height:72px;resize:vertical}
+
+/* TOAST */
+.toast{position:fixed;bottom:22px;right:22px;background:var(--dark);color:#fff;padding:14px 24px;border-radius:14px;border-left:4px solid var(--terracotta);font-weight:600;font-size:13px;z-index:9999;transform:translateY(80px);opacity:0;transition:all .3s;max-width:300px;font-family:'Inter',sans-serif}
+.toast.show{transform:translateY(0);opacity:1}
+
+/* ══════════ ADMIN ══════════ */
+#ap{display:none;position:fixed;inset:0;z-index:4000;background:#0B0400;overflow-y:auto}
+#alog{display:flex;align-items:center;justify-content:center;min-height:100vh;background:linear-gradient(135deg,#0B0400,#1C0F07)}
+.lbox{background:rgba(255,255,255,.04);border:1px solid rgba(192,98,42,.2);border-radius:24px;padding:44px;width:90%;max-width:400px;text-align:center}
+.llogo{font-family:'Playfair Display',serif;font-size:32px;color:#E8C09A;letter-spacing:2px;margin-bottom:6px;font-weight:800}
+.lsub{color:rgba(255,255,255,.4);margin-bottom:28px;font-size:13px;font-family:'Inter',sans-serif}
+.linp{width:100%;padding:13px 15px;border:1.5px solid rgba(255,255,255,.1);border-radius:12px;background:rgba(255,255,255,.05);color:#fff;font-size:13px;font-family:'Inter',sans-serif;margin-bottom:10px;outline:none}
+.linp:focus{border-color:var(--terracotta)}
+.lbtn2{width:100%;background:var(--terracotta);color:#fff;border:none;padding:14px;border-radius:12px;font-weight:700;font-size:15px;cursor:pointer;margin-top:6px;font-family:'Inter',sans-serif}
+.lerr{color:#FF6B6B;font-size:12px;margin-top:8px;display:none;font-family:'Inter',sans-serif}
+
+#adash{display:none;min-height:100vh}
+.anav{background:#150800;border-bottom:1px solid rgba(192,98,42,.2);display:flex;align-items:center;padding:12px 20px;gap:8px;flex-wrap:wrap;position:sticky;top:0;z-index:100}
+.alogo{font-family:'Playfair Display',serif;font-size:20px;color:#E8C09A;letter-spacing:1px;margin-right:12px;font-weight:700}
+.atab{background:transparent;border:1.5px solid rgba(255,255,255,.1);color:rgba(255,255,255,.55);padding:7px 13px;border-radius:8px;cursor:pointer;font-size:12px;font-weight:600;transition:all .2s;font-family:'Inter',sans-serif}
+.atab:hover,.atab.active{background:var(--terracotta);border-color:var(--terracotta);color:#fff}
+.alo{margin-left:auto;background:rgba(255,80,80,.15);border:1px solid rgba(255,80,80,.3);color:#FF6B6B;padding:7px 15px;border-radius:8px;cursor:pointer;font-size:12px;font-weight:600;font-family:'Inter',sans-serif}
+.acon{padding:22px}
+.asec{display:none}
+.asec.active{display:block}
+.apt{font-family:'Playfair Display',serif;font-size:30px;color:#E8C09A;letter-spacing:1px;margin-bottom:22px;font-weight:700}
+
+/* stats */
+.sg{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:14px;margin-bottom:28px}
+.sc{background:rgba(255,255,255,.04);border:1px solid rgba(255,107,0,.15);border-radius:14px;padding:18px;text-align:center}
+.sn{font-family:'Bebas Neue',sans-serif;font-size:40px;color:var(--orange)}
+.sl{color:rgba(255,255,255,.45);font-size:12px;margin-top:3px}
+
+/* table */
+.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th,td{padding:11px 12px;text-align:left;border-bottom:1px solid rgba(255,255,255,.06)}
+th{background:rgba(255,107,0,.1);color:var(--orange);font-weight:800;text-transform:uppercase;letter-spacing:1px;font-size:10px}
+td{color:rgba(255,255,255,.78)}
+tr:hover td{background:rgba(255,255,255,.03)}
+.sb{display:inline-block;padding:3px 10px;border-radius:20px;font-size:10px;font-weight:800;text-transform:uppercase}
+.sp{background:rgba(250,204,21,.15);color:var(--yellow)}
+.sc2{background:rgba(34,197,94,.15);color:var(--green)}
+.sk{background:rgba(255,80,80,.15);color:#FF6B6B}
+.sw{background:rgba(59,130,246,.15);color:var(--blue)}
+.abs{display:flex;gap:5px;flex-wrap:wrap}
+.ab{padding:4px 9px;border-radius:6px;border:none;cursor:pointer;font-size:10px;font-weight:700}
+.ab-ok{background:rgba(34,197,94,.2);color:var(--green)}
+.ab-w{background:rgba(59,130,246,.2);color:var(--blue)}
+.ab-d{background:rgba(255,80,80,.2);color:#FF6B6B}
+
+/* menu editor */
+.meg{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.mec{background:rgba(255,255,255,.04);border:1px solid rgba(255,107,0,.15);border-radius:14px;padding:18px}
+.mec h4{font-family:'Bebas Neue',sans-serif;font-size:19px;color:#fff;letter-spacing:1px;margin-bottom:3px}
+.mec .mp{color:var(--orange);font-weight:800;margin-bottom:10px;font-size:13px}
+.mec .mth{width:100%;height:80px;object-fit:cover;border-radius:8px;margin-bottom:10px}
+.eb{background:rgba(255,107,0,.15);border:1px solid rgba(255,107,0,.3);color:var(--orange);padding:5px 12px;border-radius:7px;cursor:pointer;font-size:11px;font-weight:700;margin-right:5px}
+.db{background:rgba(255,80,80,.15);border:1px solid rgba(255,80,80,.3);color:#FF6B6B;padding:5px 12px;border-radius:7px;cursor:pointer;font-size:11px;font-weight:700}
+.addb{background:var(--orange);color:#fff;border:none;padding:9px 18px;border-radius:10px;cursor:pointer;font-weight:800;font-size:13px;margin-bottom:18px}
+
+/* gallery admin */
+.gag{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:12px}
+.gth{position:relative;border-radius:10px;overflow:hidden;aspect-ratio:4/3}
+.gth img{width:100%;height:100%;object-fit:cover}
+.gdel{position:absolute;top:6px;right:6px;background:rgba(0,0,0,.7);color:#FF6B6B;border:none;border-radius:6px;cursor:pointer;font-size:11px;font-weight:700;padding:3px 8px}
+.gcap{position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,.6);color:#fff;font-size:10px;padding:4px 8px;font-weight:700}
+.uz{border:2px dashed rgba(255,107,0,.35);border-radius:14px;padding:32px;text-align:center;cursor:pointer;color:rgba(255,255,255,.4);font-size:13px;transition:border-color .2s;margin-bottom:18px}
+.uz:hover{border-color:var(--orange);color:var(--orange)}
+.uz input{display:none}
+.uprev{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;margin-top:14px}
+.upi{position:relative;border-radius:8px;overflow:hidden;aspect-ratio:4/3}
+.upi img{width:100%;height:100%;object-fit:cover}
+.uprm{position:absolute;top:3px;right:3px;background:rgba(0,0,0,.7);color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:10px;padding:2px 6px}
+.ucap{width:100%;margin-top:6px;padding:6px 10px;border:1.5px solid rgba(255,255,255,.1);border-radius:7px;background:rgba(255,255,255,.05);color:#fff;font-size:11px;font-family:'Nunito',sans-serif}
+.upbar{width:100%;height:6px;background:rgba(255,255,255,.1);border-radius:3px;margin-top:10px;overflow:hidden;display:none}
+.upbarfill{height:100%;background:var(--orange);transition:width .3s;width:0%}
+
+/* services admin */
+.svag{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+.svac{background:rgba(255,255,255,.04);border:1px solid rgba(255,107,0,.15);border-radius:14px;padding:18px}
+.svac h4{font-family:'Bebas Neue',sans-serif;font-size:18px;color:#fff;margin-bottom:4px}
+.svac p{font-size:12px;color:rgba(255,255,255,.45)}
+
+/* settings */
+.sgrp{background:rgba(255,255,255,.04);border:1px solid rgba(255,107,0,.12);border-radius:14px;padding:22px;margin-bottom:18px}
+.sgrp h3{color:var(--orange);font-family:'Bebas Neue',sans-serif;font-size:21px;letter-spacing:1px;margin-bottom:14px}
+.sgrp label{color:rgba(255,255,255,.55);font-size:12px;display:block;margin-bottom:4px;margin-top:10px}
+.sgrp input,.sgrp textarea,.sgrp select{width:100%;padding:9px 13px;border:1.5px solid rgba(255,255,255,.1);border-radius:8px;background:rgba(255,255,255,.05);color:#fff;font-family:'Nunito',sans-serif;font-size:13px}
+.sgrp textarea{resize:vertical;min-height:80px}
+.svb{background:var(--orange);color:#fff;border:none;padding:9px 22px;border-radius:10px;font-weight:800;cursor:pointer;font-size:13px;margin-top:12px}
+
+/* schedule */
+.schg{display:grid;grid-template-columns:repeat(7,1fr);gap:7px}
+@media(max-width:700px){.schg{grid-template-columns:repeat(3,1fr)}}
+.schd{background:rgba(255,255,255,.04);border:1px solid rgba(255,107,0,.12);border-radius:12px;padding:10px;text-align:center}
+.dname{color:var(--orange);font-weight:800;font-size:11px;margin-bottom:7px}
+.schd input{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#fff;border-radius:5px;padding:3px;font-size:10px;text-align:center;margin-bottom:3px}
+.stog{display:flex;align-items:center;justify-content:center;font-size:10px;color:rgba(255,255,255,.4);cursor:pointer;margin-top:5px}
+.dopen{border-color:rgba(34,197,94,.3)}
+.dclosed{border-color:rgba(255,80,80,.2);opacity:.6}
+
+/* admin modals */
+.amo{display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:5000;align-items:center;justify-content:center}
+.amo.open{display:flex}
+.amb{background:#180900;border:1px solid rgba(255,107,0,.25);border-radius:20px;padding:32px;width:92%;max-width:480px;max-height:92vh;overflow-y:auto}
+.amb h3{font-family:'Bebas Neue',sans-serif;font-size:24px;color:var(--orange);margin-bottom:18px;letter-spacing:2px}
+.amb label{color:rgba(255,255,255,.5);font-size:11px;display:block;margin-bottom:3px;font-weight:700}
+.amb input,.amb textarea,.amb select{width:100%;padding:9px 13px;border:1.5px solid rgba(255,255,255,.1);border-radius:8px;background:rgba(255,255,255,.05);color:#fff;font-family:'Nunito',sans-serif;font-size:13px;margin-bottom:9px;outline:none}
+.amb input:focus,.amb textarea:focus{border-color:var(--orange)}
+.amb textarea{min-height:70px;resize:vertical}
+.amb .iprev{width:100%;height:120px;object-fit:cover;border-radius:10px;margin-bottom:10px;display:none}
+.ambtns{display:flex;gap:8px;margin-top:6px}
+
+.obar{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:10px}
+.dinp{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#fff;padding:7px 12px;border-radius:8px;font-family:'Nunito',sans-serif;font-size:12px}
+
+/* CALENDAR */
+.cal-day-hdr{font-weight:800;font-size:11px;color:var(--gray);padding:6px 2px;text-align:center}
+.cal-day{background:var(--cream);border-radius:8px;padding:8px 4px;min-height:52px;cursor:default;transition:background .2s;position:relative;font-size:13px;font-weight:700;color:var(--dark2)}
+.cal-day.has-event{background:rgba(255,107,0,.12);border:2px solid var(--orange);cursor:pointer}
+.cal-day.has-event:hover{background:rgba(255,107,0,.22)}
+.cal-day.today{background:var(--orange);color:#fff!important;font-weight:900}
+.cal-day.other-month{opacity:.3}
+.cal-dot{width:7px;height:7px;background:var(--red);border-radius:50%;margin:3px auto 0}
+.cal-evt-card{background:var(--white);border-left:4px solid var(--orange);border-radius:12px;padding:14px 18px;margin-bottom:12px;box-shadow:var(--sh)}
+.cal-evt-card .ced{font-size:11px;color:var(--orange);font-weight:800;text-transform:uppercase;letter-spacing:1px}
+.cal-evt-card .cen{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1px;margin:3px 0}
+.cal-evt-card .cet{font-size:12px;color:var(--gray);line-height:1.5}
+</style>
+</head>
+<body>
+
+<div class="toast" id="toast"></div>
+
+<!-- LIGHTBOX -->
+<div id="lb"><button id="lb-x" onclick="document.getElementById('lb').classList.remove('open')">✕</button><img id="lb-img" src="" alt=""/></div>
+
+<!-- ORDER MODAL -->
+<div class="mov" id="om">
+  <div class="mbox">
+    <button class="mx" onclick="document.getElementById('om').classList.remove('open')">✕</button>
+    <div class="mt" id="om-t">🛒 Commander</div>
+    <p style="color:var(--gray);font-size:13px;margin-bottom:14px" id="om-d"></p>
+
+    <!-- CART SECTION -->
+    <div id="cart-section" style="display:none;background:var(--cream);border-radius:12px;padding:14px;margin-bottom:16px">
+      <div style="font-weight:800;font-size:13px;margin-bottom:8px;color:var(--dark2)">🛒 Articles sélectionnés</div>
+      <div id="cart-items"></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px;padding-top:10px;border-top:2px solid var(--orange)">
+        <span style="font-weight:800;font-size:14px">Total :</span>
+        <span id="cart-total" style="font-family:'Playfair Display',serif;font-size:22px;color:var(--spice)">0 €</span>
+      </div>
+    </div>
+
+    <form id="of" onsubmit="submitOrder(event)">
+      <div class="fg"><label data-i18n="form_name">Nom</label><input id="o-n" required placeholder="Tu nombre"/></div>
+      <div class="fg"><label data-i18n="form_phone">Téléphone</label><input id="o-p" type="tel" required placeholder="0xxx xxx xxx"/></div>
+      <div class="fg"><label data-i18n="o_addr">Adresse de livraison</label><input id="o-a" placeholder="Calle, barrio..."/></div>
+      <div class="fg"><label data-i18n="o_qty">Quantité</label><input id="o-q" type="number" value="1" min="1" max="20"/></div>
+      <div class="fg"><label data-i18n="o_notes">Notes</label><textarea id="o-no" placeholder="Sin cebolla, extra salsa..."></textarea></div>
+      <div class="fg" style="display:flex;justify-content:center;margin:8px 0">
+        <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" data-theme="light"></div>
+      </div>
+      <div id="recaptcha-err" style="display:none;color:#FF6B6B;font-size:12px;font-weight:700;text-align:center;margin-bottom:8px">⚠️ Por favor valida el reCAPTCHA para pedir.</div>
+      <button type="submit" class="sbtn" data-i18n="o_submit">📞 Confirmer la commande</button>
+      <div class="smsg" id="o-ok" data-i18n="o_sent">✅ Commande envoyée ! Nous vous appelons bientôt.</div>
+    </form>
+  </div>
+</div>
+
+<!-- LANG BAR -->
+<div id="lang-bar">
+  <button class="lbtn active" onclick="setLang('es')">🇪🇸 Español</button>
+  <button class="lbtn" onclick="setLang('en')">🇬🇧 English</button>
+  <!-- SOCIAL QUICK LINKS -->
+  <div id="social-topbar" style="display:flex;align-items:center;gap:8px;margin-left:auto;margin-right:8px">
+    <a id="ig-topbtn" href="#" target="_blank" title="Instagram"
+      style="display:flex;align-items:center;gap:6px;background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff;padding:4px 13px;border-radius:30px;font-size:11px;font-weight:700;text-decoration:none;transition:transform .2s;letter-spacing:.5px"
+      onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      Instagram
+    </a>
+    <a id="tt-topbtn" href="#" target="_blank" title="TikTok"
+      style="display:flex;align-items:center;gap:6px;background:#010101;color:#fff;padding:4px 13px;border-radius:30px;font-size:11px;font-weight:700;text-decoration:none;border:1.5px solid rgba(255,255,255,.15);transition:transform .2s;letter-spacing:.5px"
+      onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.21 8.21 0 004.79 1.53V6.78a4.85 4.85 0 01-1.02-.09z"/></svg>
+      TikTok
+    </a>
+  </div>
+  <button id="abtn" style="display:none">⚙</button>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nl">Arabian <span>Carthago</span></div>
+  <ul class="nlinks">
+    <li><a href="#home" data-i18n="nav_home">Inicio</a></li>
+    <li><a href="#services" data-i18n="nav_services">Servicios</a></li>
+    <li><a href="#menu" data-i18n="nav_menu">Menú</a></li>
+    <li><a href="#gallery" data-i18n="nav_gallery">Galería</a></li>
+    <li><a href="#combos" data-i18n="nav_combos">Combos</a></li>
+    <li><a href="#events">📅 Eventos</a></li>
+    <li><a href="#about" data-i18n="nav_about">Nosotros</a></li>
+    <li><a href="#contact" data-i18n="nav_contact">Contacto</a></li>
+  </ul>
+  <a href="tel:+34868630507" class="ncta" data-i18n="nav_order">📞 Pedir Ahora</a>
+  <button class="hbg" onclick="document.getElementById('mmenu').classList.toggle('open')">☰</button>
+</nav>
+<div class="mmenu" id="mmenu">
+  <button class="mmclose" onclick="document.getElementById('mmenu').classList.remove('open')">✕</button>
+  <a href="#home" onclick="document.getElementById('mmenu').classList.remove('open')" data-i18n="nav_home">Inicio</a>
+  <a href="#services" onclick="document.getElementById('mmenu').classList.remove('open')" data-i18n="nav_services">Servicios</a>
+  <a href="#menu" onclick="document.getElementById('mmenu').classList.remove('open')" data-i18n="nav_menu">Menú</a>
+  <a href="#gallery" onclick="document.getElementById('mmenu').classList.remove('open')" data-i18n="nav_gallery">Galería</a>
+  <a href="#combos" onclick="document.getElementById('mmenu').classList.remove('open')" data-i18n="nav_combos">Combos</a>
+  <a href="#events" onclick="document.getElementById('mmenu').classList.remove('open')">📅 Eventos</a>
+  <a href="#about" onclick="document.getElementById('mmenu').classList.remove('open')" data-i18n="nav_about">Nosotros</a>
+  <a href="#contact" onclick="document.getElementById('mmenu').classList.remove('open')" data-i18n="nav_contact">Contacto</a>
+</div>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hi">
+    <div class="htag" data-i18n="hero_tag">🥙 AUTÉNTICO · ARTESANAL · CARTAGENA</div>
+    <h1 class="htitle">Arabian <span>Carthago</span></h1>
+    <div id="hero-img-wrap"><div class="hero-ph"><span>🥙</span></div></div>
+    <p class="hsub" data-i18n="hero_sub">Kebab artesanal, sabores del Mediterráneo — recién hecho, con alma.</p>
+    <div class="hbtns">
+      <a href="#menu" class="bp" data-i18n="hero_cta1">Ver el Menú</a>
+      <a href="tel:+34868630507" class="bo" id="h-ph-link">📞 <span id="h-phone">868 63 05 07</span></a>
+    </div>
+    <div class="hinfo">
+      <span>🕐 <span id="h-hours" data-i18n="hero_hours">12:30 – 02:00</span></span>
+      <span>📍 Cartagena, Murcia</span>
+      <span>📞 <span id="h-phone2">868 63 05 07</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="sh">
+    <div class="stag" data-i18n="svc_tag">Nuestros Servicios</div>
+    <h2 class="stitle" data-i18n="svc_title">Lo que <span>ofrecemos</span></h2>
+    <p class="ssub" data-i18n="svc_sub">Calidad, rapidez y satisfacción garantizadas.</p>
+  </div>
+  <div class="sv-grid" id="sv-grid"></div>
+</section>
+
+<!-- MENU -->
+<section id="menu">
+  <div class="sh">
+    <div class="stag" data-i18n="menu_tag">Nuestro Menú</div>
+    <h2 class="stitle" data-i18n="menu_title">Nuestros <span>Sabores</span></h2>
+    <p class="ssub" data-i18n="menu_sub">Ingredientes frescos, salsas caseras, calidad constante.</p>
+  </div>
+  <div class="mf">
+    <button class="fb active" onclick="filterMenu('all',this)" data-i18n="f_all">Todo</button>
+    <button class="fb" onclick="filterMenu('kebab',this)">Kebab</button>
+    <button class="fb" onclick="filterMenu('burgers',this)" data-i18n="f_burgers">Burgers</button>
+    <button class="fb" onclick="filterMenu('frites',this)" data-i18n="f_frites">Patatas</button>
+    <button class="fb" onclick="filterMenu('boissons',this)" data-i18n="f_drinks">Bebidas</button>
+    <button class="fb" onclick="filterMenu('desserts',this)" data-i18n="f_desserts">Postres</button>
+  </div>
+  <div class="mg" id="mg"></div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="sh">
+    <div class="stag" data-i18n="gal_tag">Nuestra Galería</div>
+    <h2 class="stitle" data-i18n="gal_title">Fotos del <span>Restaurante</span></h2>
+    <p class="ssub" data-i18n="gal_sub">Descubre nuestro ambiente y nuestros platos.</p>
+  </div>
+  <div class="gg" id="gg"><div class="ge" data-i18n="gal_empty">📸 Las fotos se mostrarán aquí.</div></div>
+</section>
+
+<!-- COMBOS -->
+<section id="combos">
+  <div class="sh">
+    <div class="stag" data-i18n="combo_tag">Ofertas Especiales</div>
+    <h2 class="stitle" data-i18n="combo_title">Combo <span>Deals</span></h2>
+    <p class="ssub" data-i18n="combo_sub">Ahorra más combinando tus favoritos.</p>
+  </div>
+  <div class="cg" id="cg"></div>
+</section>
+
+<!-- CALENDAR / EVENTS -->
+<section id="events" style="background:var(--white)">
+  <div class="sh">
+    <div class="stag">📅 Agenda</div>
+    <h2 class="stitle">Eventos & <span>Promociones</span></h2>
+    <p class="ssub">Consulta nuestros próximos eventos y ofertas especiales.</p>
+  </div>
+  <div id="cal-wrap" style="max-width:700px;margin:0 auto">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:10px">
+      <button onclick="calPrev()" style="background:var(--terracotta);color:#fff;border:none;padding:8px 20px;border-radius:30px;font-weight:600;cursor:pointer;font-size:14px;font-family:'Inter',sans-serif">‹ Ant.</button>
+      <div id="cal-month-label" style="font-family:'Playfair Display',serif;font-size:26px;color:var(--dark2);letter-spacing:1px;font-weight:700"></div>
+      <button onclick="calNext()" style="background:var(--terracotta);color:#fff;border:none;padding:8px 20px;border-radius:30px;font-weight:600;cursor:pointer;font-size:14px;font-family:'Inter',sans-serif">Sig. ›</button>
+    </div>
+    <div id="cal-grid" style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center"></div>
+    <div id="cal-events-list" style="margin-top:24px"></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="ag">
+    <div class="av" id="about-vis">
+      <div class="avo">
+        <div style="font-size:56px">🥙</div>
+        <div class="avt">Carthago</div>
+        <div style="font-size:12px;opacity:.4;letter-spacing:3px;font-family:'Inter',sans-serif;color:#E8C09A">CARTAGENA</div>
+      </div>
+    </div>
+    <div class="at">
+      <div class="lbl" data-i18n="about_tag">Nuestra Historia</div>
+      <h2 data-i18n="about_title">Sabores del <span style="color:var(--terracotta)">Mediterráneo</span></h2>
+      <p id="ap1" data-i18n="about_p1">Arabian Carthago nació con la pasión de traer a Cartagena los auténticos sabores del kebab artesanal, preparado con ingredientes frescos y técnicas tradicionales.</p>
+      <p id="ap2" data-i18n="about_p2">Tanto si comes aquí, usas el drive o pedimos a domicilio — siempre el mismo sabor auténtico.</p>
+      <div class="aff">
+        <div class="af"><div class="afi">🚗</div><div><div class="afl" data-i18n="f1t">Drive Disponible</div><div class="afd" data-i18n="f1d">Rápido y cómodo.</div></div></div>
+        <div class="af"><div class="afi">🌿</div><div><div class="afl" data-i18n="f2t">Ingredientes Frescos</div><div class="afd" data-i18n="f2d">Calidad mediterránea.</div></div></div>
+        <div class="af"><div class="afi">🏠</div><div><div class="afl" data-i18n="f3t">Comer en Sitio</div><div class="afd" data-i18n="f3d">Ambiente acogedor.</div></div></div>
+        <div class="af"><div class="afi">📦</div><div><div class="afl" data-i18n="f4t">Entrega sin Contacto</div><div class="afd" data-i18n="f4d">Segura y rápida.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="sh">
+    <div class="stag" data-i18n="ct_tag">Encuéntranos</div>
+    <h2 class="stitle" data-i18n="ct_title">Contacto & <span>Ubicación</span></h2>
+  </div>
+  <div class="ctg">
+    <div class="cti">
+      <h3 data-i18n="ct_h3">Ven a Visitarnos</h3>
+      <div class="ci"><div class="cic">📞</div><div><div class="cil" data-i18n="ct_ph_l">Teléfono</div><a class="civ" href="tel:+34868630507" id="ct-ph">868 63 05 07</a></div></div>
+      <div class="ci"><div class="cic">🕐</div><div><div class="cil" data-i18n="ct_hr_l">Horario</div><div class="civ" id="ct-hr">Lun–Mar 19:30–02:00 · Resto 12:30–02:00</div></div></div>
+      <div class="ci"><div class="cic">📍</div><div><div class="cil" data-i18n="ct_loc_l">Dirección</div><div class="civ" id="ct-addr">C/ Santiago Ramón y Cajal, 30302 Cartagena, Murcia</div></div></div>
+      <div class="mapbox">
+        <div style="font-size:44px">📍</div>
+        <div class="mpcode" id="ct-pc">J2F3+F7 Cartagena</div>
+        <div style="font-size:11px;opacity:.4;font-family:'Inter',sans-serif" data-i18n="ct_mhint">Google Maps Plus Code</div>
+        <a href="https://maps.google.com/?q=J2F3+F7+Cartagena+Spain" target="_blank" style="color:#E8C09A;font-weight:600;font-size:12px;text-decoration:none;margin-top:4px;font-family:'Inter',sans-serif" data-i18n="ct_mopen">Abrir en Maps →</a>
+      </div>
+    </div>
+    <div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:24px;color:#E8C09A;margin-bottom:18px;letter-spacing:.5px;font-weight:700" data-i18n="ct_ft">Envíanos un Mensaje</h3>
+      <form class="cf" id="mf" onsubmit="sendMsg(event)">
+        <label data-i18n="form_name">Nombre</label><input id="m-n" required placeholder="Tu nombre"/>
+        <label data-i18n="form_phone">Teléfono</label><input id="m-p" type="tel" required placeholder="6xx xxx xxx"/>
+        <label data-i18n="form_msg">Mensaje</label><textarea id="m-t" required placeholder="Tu mensaje..."></textarea>
+        <button type="submit" class="sbtn" data-i18n="form_send">Enviar</button>
+        <div class="smsg" id="m-ok" data-i18n="form_sent">✅ ¡Mensaje enviado con éxito!</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="fl" id="footer-title-trigger" style="cursor:default">Arabian Carthago</div>
+  <div style="opacity:.4;margin-bottom:10px;font-family:'Inter',sans-serif" data-i18n="foot_tag">Kebab & Fast Food · Cartagena, Murcia</div>
+  <div class="flinks">
+    <a href="#home" data-i18n="nav_home">Inicio</a>
+    <a href="#menu" data-i18n="nav_menu">Menú</a>
+    <a href="#combos" data-i18n="nav_combos">Combos</a>
+    <a href="#about" data-i18n="nav_about">Nosotros</a>
+    <a href="#contact" data-i18n="nav_contact">Contacto</a>
+  </div>
+  <div id="fsocials" style="margin-top:10px;display:flex;gap:14px;justify-content:center"></div>
+  <div style="margin-top:14px;opacity:.3;font-size:11px;font-family:'Inter',sans-serif">© 2026 Arabian Carthago Kebab. Todos los derechos reservados.</div>
+</footer>
+
+<!-- ══════════ ADMIN PANEL ══════════ -->
+<div id="ap">
+  <div id="alog">
+    <div class="lbox">
+      <div class="llogo">Arabian Carthago</div>
+      <div class="lsub">🔐 Panel de Administración</div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:18px">
+        <div style="font-size:48px;filter:drop-shadow(0 0 20px rgba(192,98,42,.5))">🥙</div>
+        <div style="color:rgba(255,255,255,.3);font-size:11px;letter-spacing:2px;text-transform:uppercase;font-family:'Inter',sans-serif">Acceso Seguro</div>
+      </div>
+      <input class="linp" type="text" id="lu" placeholder="Nombre de usuario" autocomplete="username"/>
+      <input class="linp" type="password" id="lp" placeholder="Contraseña" autocomplete="current-password"/>
+      <button class="lbtn2" onclick="adminLogin()">Iniciar sesión</button>
+      <div class="lerr" id="lerr">❌ Credenciales incorrectas. Inténtalo de nuevo.</div>
+      <div id="lockout-msg" style="display:none;color:#FACC15;font-size:12px;margin-top:8px;font-family:'Inter',sans-serif">⚠️ Demasiados intentos. Espera <span id="lock-sec">30</span>s.</div>
+      <div style="margin-top:16px"><button onclick="document.getElementById('ap').style.display='none'" style="background:none;border:none;color:rgba(255,255,255,.2);cursor:pointer;font-size:12px;font-family:'Inter',sans-serif">← Volver al sitio</button></div>
+    </div>
+  </div>
+
+  <div id="adash">
+    <div class="anav">
+      <div class="alogo">Carthago Admin</div>
+      <div id="fb-status" style="font-size:11px;font-weight:700;color:#FACC15;margin-left:8px">⏳ Conectando...</div>
+      <button class="atab active" onclick="aTab('orders')" id="tab-orders">📦 Pedidos</button>
+      <button class="atab" onclick="aTab('schedule')" id="tab-schedule">📅 Horario</button>
+      <button class="atab" onclick="aTab('calendar')" id="tab-calendar">🗓 Calendario</button>
+      <button class="atab" onclick="aTab('menu-edit')" id="tab-menu-edit">🥙 Menú</button>
+      <button class="atab" onclick="aTab('combos-edit')" id="tab-combos-edit">🎁 Combos</button>
+      <button class="atab" onclick="aTab('gallery-adm')" id="tab-gallery-adm">🖼 Galería</button>
+      <button class="atab" onclick="aTab('svc-adm')" id="tab-svc-adm">⭐ Servicios</button>
+      <button class="atab" onclick="aTab('msgs')" id="tab-msgs">✉️ Mensajes</button>
+      <button class="atab" onclick="aTab('settings')" id="tab-settings">⚙️ Ajustes</button>
+      <button class="alo" onclick="adminLogout()">Cerrar sesión →</button>
+    </div>
+    <div class="acon">
+
+      <!-- ORDERS -->
+      <div class="asec active" id="sec-orders">
+        <div class="apt">📦 Commandes</div>
+        <div class="sg">
+          <div class="sc"><div class="sn" id="st-t">0</div><div class="sl">Total del día</div></div>
+          <div class="sc"><div class="sn" id="st-p">0</div><div class="sl">Pendientes</div></div>
+          <div class="sc"><div class="sn" id="st-c">0</div><div class="sl">Confirmados</div></div>
+          <div class="sc"><div class="sn" id="st-k">0</div><div class="sl">Cancelados</div></div>
+        </div>
+        <div class="obar">
+          <span style="color:var(--orange);font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1px">Pedidos por fecha</span>
+          <input type="date" class="dinp" id="od" onchange="loadOrders()"/>
+        </div>
+        <div class="tw"><table><thead><tr><th>#</th><th>Heure</th><th>Client</th><th>Tél</th><th>Commande</th><th>Adresse</th><th>Notes</th><th>Statut</th><th>Actions</th></tr></thead><tbody id="otb"><tr><td colspan="9" style="text-align:center;opacity:.35;padding:28px">Cargando...</td></tr></tbody></table></div>
+      </div>
+
+      <!-- SCHEDULE -->
+      <div class="asec" id="sec-schedule">
+        <div class="apt">📅 Horario Semanal</div>
+        <p style="color:rgba(255,255,255,.4);font-size:13px;margin-bottom:20px">Define los horarios de apertura para cada día.</p>
+        <div class="schg" id="schg"></div>
+        <br><button class="svb" onclick="saveSchedule()">💾 Guardar</button>
+      </div>
+
+      <!-- CALENDAR EVENTS ADMIN -->
+      <div class="asec" id="sec-calendar">
+        <div class="apt">🗓 Calendario Calendrier & Événements Eventos</div>
+        <p style="color:rgba(255,255,255,.4);font-size:13px;margin-bottom:18px">Añade eventos et promotions que aparecen en el sitio público.</p>
+        <button class="addb" onclick="openCalModal()">+ Añadir un evento</button>
+        <div id="cal-admin-list" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:10px"></div>
+      </div>
+
+      <!-- MENU EDIT -->
+      <div class="asec" id="sec-menu-edit">
+        <div class="apt">🍔 Gestión del Menú</div>
+        <button class="addb" onclick="openItemModal()">+ Añadir un plato</button>
+        <div class="meg" id="meg"></div>
+      </div>
+
+      <!-- COMBOS EDIT -->
+      <div class="asec" id="sec-combos-edit">
+        <div class="apt">🎁 Gestión de Combos</div>
+        <button class="addb" onclick="openComboModal()">+ Añadir un combo</button>
+        <div class="meg" id="combos-meg"></div>
+      </div>
+
+      <!-- GALLERY ADMIN -->
+      <div class="asec" id="sec-gallery-adm">
+        <div class="apt">🖼 Gestión de la Galería</div>
+        <p style="color:rgba(255,255,255,.4);font-size:13px;margin-bottom:18px">Imágenes y vídeos almacenados en Firebase. Sin límite de tamaño.</p>
+        <div class="uz" onclick="document.getElementById('fimg').click()">
+          <div style="font-size:36px;margin-bottom:8px">📸🎬</div>
+          <div>Haz clic para elegir fotos o vídeos</div>
+          <div style="font-size:11px;margin-top:4px;opacity:.5">JPG, PNG, WEBP, GIF, MP4, MOV, WEBM · Aucune limite de taille</div>
+          <input type="file" id="fimg" accept="image/*,video/*" multiple onchange="previewImgs(event)"/>
+        </div>
+        <div id="uprevs" class="uprev"></div>
+        <div class="upbar" id="upbar"><div class="upbarfill" id="upfill"></div></div>
+        <button class="addb" style="margin-top:14px" onclick="uploadImgs()">📤 Publicar fotos</button>
+        <hr style="border-color:rgba(255,255,255,.08);margin:24px 0"/>
+        <div style="color:var(--orange);font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1px;margin-bottom:14px">Fotos publicadas</div>
+        <div class="gag" id="gag"><p style="color:rgba(255,255,255,.3);font-size:13px">Cargando...</p></div>
+      </div>
+
+      <!-- SERVICES ADMIN -->
+      <div class="asec" id="sec-svc-adm">
+        <div class="apt">⭐ Services</div>
+        <button class="addb" onclick="openSvcModal()">+ Añadir un servicio</button>
+        <div class="svag" id="svag"></div>
+      </div>
+
+      <!-- MESSAGES -->
+      <div class="asec" id="sec-msgs">
+        <div class="apt">✉️ Mensajes de Clientes</div>
+        <div class="tw"><table><thead><tr><th>Date</th><th>Nom</th><th>Téléphone</th><th>Message</th><th>Action</th></tr></thead><tbody id="mtb"><tr><td colspan="5" style="text-align:center;opacity:.35;padding:28px">Cargando...</td></tr></tbody></table></div>
+      </div>
+
+      <!-- SETTINGS -->
+      <div class="asec" id="sec-settings">
+        <div class="apt">⚙️ Ajustes</div>
+
+        <!-- INFO GÉNÉRALES -->
+        <div class="sgrp">
+          <h3>🏠 Información General</h3>
+          <label>Nombre del restaurante</label>
+          <input id="sn" placeholder="POCKITO"/>
+          <label>Téléphone (mostrado en el sitio)</label>
+          <input id="sph" placeholder="0542941005"/>
+          <label>Dirección completa</label>
+          <input id="sad" placeholder="Sidi Bel Abbès, Algérie"/>
+          <label>Plus Code Google Maps</label>
+          <input id="spc" placeholder="6967+G5 Sidi Bel Abbès"/>
+          <label>Horario de apertura</label>
+          <input id="shr" placeholder="11:00 – 23:00"/>
+        </div>
+
+        <!-- IMAGE HERO -->
+        <div class="sgrp">
+          <h3>🖼 Imagen Hero (foto circular inicio)</h3>
+          <label>URL de la imagen</label>
+          <input id="shi" placeholder="https://... o pega base64"/>
+          <label>— O elige desde tu dispositivo —</label>
+          <input type="file" id="shf" accept="image/*" onchange="prvHero(event)" style="color:rgba(255,255,255,.5)"/>
+          <img id="shp" src="" style="display:none;width:110px;height:110px;border-radius:50%;object-fit:cover;margin-top:10px;border:3px solid var(--orange)"/>
+        </div>
+
+        <!-- À PROPOS -->
+        <div class="sgrp">
+          <h3>📖 Sección Nosotros</h3>
+          <label>Párrafo 1</label>
+          <textarea id="sa1" rows="3"></textarea>
+          <label>Párrafo 2</label>
+          <textarea id="sa2" rows="3"></textarea>
+          <label>Imagen de fondo (URL)</label>
+          <input id="sai" placeholder="https://..."/>
+        </div>
+
+        <!-- RÉSEAUX SOCIAUX -->
+        <div class="sgrp">
+          <h3>📱 Redes Sociales &amp; Contacto</h3>
+          <label>Facebook (URL complète)</label>
+          <input id="sfb" placeholder="https://facebook.com/pockito"/>
+          <label>Instagram (URL complète)</label>
+          <input id="sig" placeholder="https://instagram.com/pockito"/>
+          <label>TikTok (URL complète)</label>
+          <input id="stt" placeholder="https://tiktok.com/@pockito"/>
+          <label>WhatsApp (número con prefijo, sin +)</label>
+          <input id="swa" placeholder="213542941005"/>
+        </div>
+
+        <!-- IDENTIFIANTS ADMIN -->
+        <div class="sgrp" style="border-color:rgba(255,107,0,.4)">
+          <h3>🔐 Credenciales Admin</h3>
+          <p style="color:rgba(255,255,255,.4);font-size:12px;margin-bottom:14px;line-height:1.6">Cambia tu nombre de usuario y contraseña. Le nouveau mot de passe doit faire au moins 8 caractères.</p>
+          <label>Nombre de usuario actual</label>
+          <input id="cur-user" placeholder="pockito_admin" style="opacity:.6"/>
+          <label>Nuevo nombre de usuario</label>
+          <input id="new-user" placeholder="nuevo_nombre"/>
+          <label>Nueva contraseña</label>
+          <input id="new-pass" type="password" placeholder="Nueva contraseña (mín 8 caracteres)"/>
+          <label>Confirmar contraseña</label>
+          <input id="conf-pass" type="password" placeholder="Repite la contraseña"/>
+          <button class="svb" onclick="saveCredentials()" style="background:var(--red);margin-top:4px">🔐 Actualizar credenciales</button>
+          <div id="cred-msg" style="margin-top:8px;font-size:12px;display:none"></div>
+        </div>
+
+        <!-- FIREBASE CONSOLE -->
+        <div class="sgrp" style="border-color:rgba(250,204,21,.35)">
+          <h3 style="color:#FACC15">🔥 Firebase Consola</h3>
+          <p style="color:rgba(255,255,255,.45);font-size:12px;line-height:1.7;margin-bottom:14px">
+            Para que la sincronización funcione, las reglas de Firebase deben permitir el acceso.
+            Copia estas reglas en tu consola Firebase:
+          </p>
+          <pre style="background:rgba(0,0,0,.5);color:#22C55E;padding:14px;border-radius:10px;font-size:12px;overflow-x:auto;line-height:1.6">{
+  "rules": {
+    ".read": true,
+    ".write": true
+  }
+}</pre>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
+            <a href="https://console.firebase.google.com/project/food-19118/database/food-19118-default-rtdb/rules"
+               target="_blank"
+               style="background:#FACC15;color:#000;padding:9px 18px;border-radius:9px;font-weight:800;font-size:12px;text-decoration:none">
+              🔗 Reglas Firebase →
+            </a>
+            <a href="https://console.firebase.google.com/project/food-19118/database/food-19118-default-rtdb/data"
+               target="_blank"
+               style="background:rgba(255,255,255,.1);color:#fff;padding:9px 18px;border-radius:9px;font-weight:800;font-size:12px;text-decoration:none">
+              📊 Base de datos →
+            </a>
+          </div>
+          <div style="margin-top:16px;padding:12px;background:rgba(255,255,255,.04);border-radius:10px">
+            <div style="color:rgba(255,255,255,.5);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">Info del proyecto</div>
+            <div style="font-size:11px;color:rgba(255,255,255,.35);line-height:2">
+              Proyecto : <span style="color:#E8C09A">food-19118</span><br/>
+              Región : <span style="color:#E8C09A">europe-west1</span><br/>
+              URL DB : <span style="color:#E8C09A">food-19118-default-rtdb.europe-west1.firebasedatabase.app</span>
+            </div>
+          </div>
+        </div>
+
+        <button class="svb" style="font-size:15px;padding:12px 32px" onclick="saveSettings()">💾 Guardar tout</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ADMIN MODALS -->
+<div class="amo" id="imod">
+  <div class="amb">
+    <h3 id="im-t">Añadir un plato</h3>
+    <input type="hidden" id="im-id"/>
+    <label>Nom</label><input id="im-n" placeholder="ej: Kebab Especial"/>
+    <label>Precio (€)</label><input id="im-pr" type="number" placeholder="480"/>
+    <label>Catégorie</label>
+    <div style="display:flex;gap:8px;align-items:center;margin-bottom:9px">
+      <select id="im-c" style="flex:1" onchange="if(this.value==='__new__')document.getElementById('im-c-new').style.display='block';else document.getElementById('im-c-new').style.display='none'">
+        <option value="burgers">Burgers</option>
+        <option value="frites">Frites</option>
+        <option value="pizzas">Pizzas</option>
+        <option value="boissons">Boissons</option>
+        <option value="desserts">Desserts</option>
+        <option value="sandwichs">Sandwichs</option>
+        <option value="tacos">Tacos</option>
+        <option value="wraps">Wraps</option>
+        <option value="salades">Salades</option>
+        <option value="soupes">Soupes</option>
+        <option value="grillades">Grillades</option>
+        <option value="pates">Pâtes</option>
+        <option value="sushi">Sushi</option>
+        <option value="fruits_de_mer">Fruits de mer</option>
+        <option value="poulet">Poulet</option>
+        <option value="viande">Viande</option>
+        <option value="vegan">Vegan</option>
+        <option value="petit_dej">Petit-déjeuner</option>
+        <option value="snacks">Snacks</option>
+        <option value="glaces">Glaces</option>
+        <option value="patisseries">Pâtisseries</option>
+        <option value="jus">Jus</option>
+        <option value="cafes">Cafés</option>
+        <option value="thes">Thés</option>
+        <option value="milkshakes">Milkshakes</option>
+        <option value="__new__">+ Nouvelle catégorie...</option>
+      </select>
+    </div>
+    <input id="im-c-new" placeholder="Nom de la nouvelle catégorie" style="display:none;margin-bottom:9px;width:100%;padding:9px 13px;border:1.5px solid rgba(255,255,255,.1);border-radius:8px;background:rgba(255,255,255,.05);color:#fff;font-family:'Nunito',sans-serif;font-size:13px"/>
+    <label>Emoji</label><input id="im-e" placeholder="🍔"/>
+    <label>Description</label><textarea id="im-d" placeholder="Descripción breve..."></textarea>
+    <label>URL de imagen (opcional)</label><input id="im-i" placeholder="https://..." oninput="prvItemImg(this.value)"/>
+    <img id="im-ip" class="iprev" src="" alt=""/>
+    <label>— O elige un archivo —</label>
+    <input type="file" id="im-f" accept="image/*" onchange="fileItemImg(event)" style="color:rgba(255,255,255,.5)"/>
+    <div class="ambtns">
+      <button class="svb" onclick="saveItem()">💾 Guardar</button>
+      <button onclick="document.getElementById('imod').classList.remove('open')" style="background:rgba(255,80,80,.2);border:1px solid rgba(255,80,80,.3);color:#FF6B6B;padding:9px 18px;border-radius:9px;cursor:pointer;font-weight:700">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<div class="amo" id="smod">
+  <div class="amb">
+    <h3 id="sm-t">Añadir un servicio</h3>
+    <input type="hidden" id="sm-id"/>
+    <label>Nombre del servicio</label><input id="sm-n" placeholder="ej: Entrega rápida"/>
+    <label>Emoji</label><input id="sm-i" placeholder="🚚"/>
+    <label>Description</label><textarea id="sm-d" placeholder="Descripción breve..."></textarea>
+    <div class="ambtns">
+      <button class="svb" onclick="saveSvc()">💾 Guardar</button>
+      <button onclick="document.getElementById('smod').classList.remove('open')" style="background:rgba(255,80,80,.2);border:1px solid rgba(255,80,80,.3);color:#FF6B6B;padding:9px 18px;border-radius:9px;cursor:pointer;font-weight:700">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<!-- COMBO MODAL -->
+<div class="amo" id="combo-mod">
+  <div class="amb">
+    <h3 id="combo-mod-t">Añadir un combo</h3>
+    <input type="hidden" id="combo-id"/>
+    <label>Nom</label><input id="combo-n" placeholder="ej: Kebab + Patatas + Refresco"/>
+    <label>Precio (€)</label><input id="combo-pr" type="number" placeholder="780"/>
+    <label>Descuento (ej: -15%)</label><input id="combo-disc" placeholder="-15%"/>
+    <label>Emoji</label><input id="combo-emo" placeholder="🍔🍟🥤"/>
+    <label>Description</label><textarea id="combo-d" placeholder="Description du combo..."></textarea>
+    <div class="ambtns">
+      <button class="svb" onclick="saveCombo()">💾 Guardar</button>
+      <button onclick="document.getElementById('combo-mod').classList.remove('open')" style="background:rgba(255,80,80,.2);border:1px solid rgba(255,80,80,.3);color:#FF6B6B;padding:9px 18px;border-radius:9px;cursor:pointer;font-weight:700">Cancelar</button>
+    </div>
+  </div>
+</div>
+<div class="amo" id="cal-mod">
+  <div class="amb">
+    <h3 id="cal-mod-t">Añadir un evento</h3>
+    <input type="hidden" id="cal-ev-id"/>
+    <label>Titre</label><input id="cal-ev-title" placeholder="ej: Happy Hour 🎉"/>
+    <label>Date</label><input id="cal-ev-date" type="date"/>
+    <label>Hora (opcional)</label><input id="cal-ev-time" type="time"/>
+    <label>Description</label><textarea id="cal-ev-desc" placeholder="Detalles del evento..."></textarea>
+    <label>Emoji</label><input id="cal-ev-emoji" placeholder="🎉"/>
+    <div class="ambtns">
+      <button class="svb" onclick="saveCalEvent()">💾 Guardar</button>
+      <button onclick="document.getElementById('cal-mod').classList.remove('open')" style="background:rgba(255,80,80,.2);border:1px solid rgba(255,80,80,.3);color:#FF6B6B;padding:9px 18px;border-radius:9px;cursor:pointer;font-weight:700">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ════════════════════════════════════════════════════════
+   DATA LAYER — localStorage primary + Firebase REST sync
+   Works 100% offline. Syncs to Firebase when rules allow.
+════════════════════════════════════════════════════════ */
+const _DB   = 'https://food-19118-default-rtdb.europe-west1.firebasedatabase.app';
+const _LS   = 'carthago_';          // localStorage prefix
+let   _fbOK = false;               // true once Firebase confirmed reachable
+
+/* ── localStorage helpers ── */
+const LS = {
+  get:  k         => { try{ return JSON.parse(localStorage.getItem(_LS+k)) }catch(e){return null} },
+  set:  (k,v)     => { try{ localStorage.setItem(_LS+k, JSON.stringify(v)) }catch(e){} },
+  del:  k         => { localStorage.removeItem(_LS+k) }
+};
+
+/* ── Firebase REST (best-effort, silent fail) ── */
+async function _fbReq(path, method, body){
+  const opts = { method, headers:{'Content-Type':'application/json'} };
+  if(body !== undefined) opts.body = JSON.stringify(body);
+  const res = await fetch(`${_DB}/${path}.json`, opts);
+  if(!res.ok) throw new Error(res.status);
+  _fbOK = true;
+  return res.json();
+}
+
+/* ── Unified FB object ── */
+const FB = {
+  /* Read: try Firebase, fall back to localStorage */
+  once: async (path) => {
+    try {
+      const d = await _fbReq(path, 'GET');
+      if(d !== null) LS.set(path, d);   // cache locally
+      _fbOK = true;
+      return d;
+    } catch(e) {
+      _fbOK = false;
+      return LS.get(path);              // use cached
+    }
+  },
+
+  /* Write: always save locally, try Firebase */
+  set: async (path, data) => {
+    LS.set(path, data);
+    try { await _fbReq(path, 'PUT', data); _fbOK = true; }
+    catch(e) { _fbOK = false; _queueSync(path, 'PUT', data); }
+  },
+
+  push: async (path, data) => {
+    /* Generate a local key like Firebase would */
+    const key = '-' + Date.now().toString(36).toUpperCase() + Math.random().toString(36).slice(2,7).toUpperCase();
+    const existing = LS.get(path) || {};
+    existing[key] = data;
+    LS.set(path, existing);
+    try { await _fbReq(path, 'POST', data); _fbOK = true; }
+    catch(e) { _fbOK = false; _queueSync(path, 'POST', data); }
+    return key;
+  },
+
+  update: async (path, data) => {
+    /* Merge into local cache */
+    const parts = path.split('/');
+    const parent = parts.slice(0,-1).join('/');
+    const key    = parts[parts.length-1];
+    const existing = LS.get(parent) || {};
+    if(existing[key]) existing[key] = {...existing[key], ...data};
+    LS.set(parent, existing);
+    try { await _fbReq(path, 'PATCH', data); _fbOK = true; }
+    catch(e) { _fbOK = false; }
+  },
+
+  remove: async (path) => {
+    const parts = path.split('/');
+    if(parts.length > 1){
+      const parent = parts.slice(0,-1).join('/');
+      const key    = parts[parts.length-1];
+      const existing = LS.get(parent) || {};
+      delete existing[key];
+      LS.set(parent, existing);
+    } else { LS.del(path); }
+    try { await _fbReq(path, 'DELETE'); _fbOK = true; }
+    catch(e) { _fbOK = false; }
+  },
+
+  on: (path, cb) => {
+    /* Call immediately with cached data, then poll Firebase */
+    const cached = LS.get(path);
+    if(cached !== null) cb(cached);
+    const run = async () => {
+      try {
+        const d = await _fbReq(path, 'GET');
+        if(d !== null){ LS.set(path, d); cb(d); }
+        _fbOK = true; _updateStatus();
+      } catch(e) { _fbOK = false; _updateStatus(); }
+    };
+    run();
+    return setInterval(run, 10000);
+  }
+};
+
+/* ── Sync queue: retry failed writes when Firebase comes back ── */
+const _syncQ = [];
+function _queueSync(path, method, data){ _syncQ.push({path,method,data}); }
+async function _flushSync(){
+  if(!_syncQ.length) return;
+  for(let i=_syncQ.length-1; i>=0; i--){
+    const {path,method,data} = _syncQ[i];
+    try{ await _fbReq(path,method,data); _syncQ.splice(i,1); }catch(e){}
+  }
+}
+setInterval(_flushSync, 15000);
+
+/* ── Status indicator ── */
+function _updateStatus(){
+  const el = document.getElementById('fb-status');
+  if(!el) return;
+  el.textContent = _fbOK ? '🟢 Firebase conectado' : '🟡 Modo sin conexión (localStorage)';
+  el.style.color  = _fbOK ? '#22C55E' : '#FACC15';
+}
+
+function onFB(fn){ fn(); }
+
+/* ─── i18n ─── */
+const T={
+  es:{nav_home:"Inicio",nav_services:"Servicios",nav_menu:"Menú",nav_gallery:"Galería",nav_combos:"Combos",nav_about:"Nosotros",nav_contact:"Contacto",nav_order:"📞 Pedir Ahora",hero_tag:"🥙 AUTÉNTICO · ARTESANAL · CARTAGENA",hero_sub:"Kebab artesanal, sabores del Mediterráneo — recién hecho, con alma.",hero_cta1:"Ver el Menú",hero_hours:"12:30 – 02:00",svc_tag:"Nuestros Servicios",svc_title:"Lo que ofrecemos",svc_sub:"Calidad, rapidez y satisfacción garantizadas.",menu_tag:"Nuestro Menú",menu_title:"Nuestros Sabores",menu_sub:"Ingredientes frescos, salsas caseras, calidad constante.",f_all:"Todo",f_burgers:"Burgers",f_frites:"Patatas",f_pizzas:"Pizzas",f_drinks:"Bebidas",f_desserts:"Postres",gal_tag:"Nuestra Galería",gal_title:"Fotos del Restaurante",gal_sub:"Descubre nuestro ambiente y nuestros platos.",gal_empty:"📸 Las fotos se mostrarán aquí.",combo_tag:"Ofertas Especiales",combo_title:"Combo Deals",combo_sub:"Ahorra más combinando tus favoritos.",about_tag:"Nuestra Historia",about_title:"Sabores del Mediterráneo",about_p1:"Arabian Carthago nació con la pasión de traer a Cartagena los auténticos sabores del kebab artesanal, preparado con ingredientes frescos y técnicas tradicionales.",about_p2:"Tanto si comes aquí, usas el drive o pedimos a domicilio — siempre el mismo sabor auténtico.",f1t:"Drive Disponible",f1d:"Rápido y cómodo.",f2t:"Ingredientes Frescos",f2d:"Calidad mediterránea.",f3t:"Comer en Sitio",f3d:"Ambiente acogedor.",f4t:"Entrega sin Contacto",f4d:"Segura y rápida.",ct_tag:"Encuéntranos",ct_title:"Contacto & Ubicación",ct_h3:"Ven a Visitarnos",ct_ph_l:"Teléfono",ct_hr_l:"Horario",ct_loc_l:"Dirección",ct_mhint:"Google Maps Plus Code",ct_mopen:"Abrir en Maps →",ct_ft:"Envíanos un Mensaje",form_name:"Nombre",form_phone:"Teléfono",form_msg:"Mensaje",form_send:"Enviar",form_sent:"✅ ¡Mensaje enviado!",o_addr:"Dirección de entrega",o_qty:"Cantidad",o_notes:"Notas",o_submit:"📞 Confirmar Pedido",o_sent:"✅ ¡Pedido enviado! Te llamamos.",foot_tag:"Kebab & Fast Food · Cartagena, Murcia"},
+  en:{nav_home:"Home",nav_services:"Services",nav_menu:"Menu",nav_gallery:"Gallery",nav_combos:"Combos",nav_about:"About",nav_contact:"Contact",nav_order:"📞 Order Now",hero_tag:"🥙 AUTHENTIC · ARTISAN · CARTAGENA",hero_sub:"Handcrafted kebab, Mediterranean flavours — freshly made, with soul.",hero_cta1:"View Menu",hero_hours:"12:30 – 02:00",svc_tag:"Our Services",svc_title:"What we offer",svc_sub:"Quality, speed and satisfaction guaranteed.",menu_tag:"Our Menu",menu_title:"Our Flavours",menu_sub:"Fresh ingredients, house sauces, consistent quality.",f_all:"All",f_burgers:"Burgers",f_frites:"Fries",f_pizzas:"Pizzas",f_drinks:"Drinks",f_desserts:"Desserts",gal_tag:"Our Gallery",gal_title:"Restaurant Photos",gal_sub:"Discover our atmosphere and dishes.",gal_empty:"📸 Photos will appear here.",combo_tag:"Special Offers",combo_title:"Combo Deals",combo_sub:"Save more when you bundle your favourites.",about_tag:"Our Story",about_title:"Mediterranean Flavours",about_p1:"Arabian Carthago was born with the passion of bringing authentic handcrafted kebab to Cartagena, made with fresh ingredients and traditional techniques.",about_p2:"Whether you dine in, use the drive-through or order delivery — always the same authentic taste.",f1t:"Drive Available",f1d:"Fast and convenient.",f2t:"Fresh Ingredients",f2d:"Mediterranean quality.",f3t:"Dine In",f3d:"Welcoming atmosphere.",f4t:"Contactless Delivery",f4d:"Safe and fast.",ct_tag:"Find Us",ct_title:"Contact & Location",ct_h3:"Come Visit Us",ct_ph_l:"Phone",ct_hr_l:"Hours",ct_loc_l:"Address",ct_mhint:"Google Maps Plus Code",ct_mopen:"Open in Maps →",ct_ft:"Send a Message",form_name:"Name",form_phone:"Phone",form_msg:"Message",form_send:"Send",form_sent:"✅ Message sent!",o_addr:"Delivery address",o_qty:"Quantity",o_notes:"Notes",o_submit:"📞 Confirm Order",o_sent:"✅ Order sent! We'll call to confirm.",foot_tag:"Kebab & Fast Food · Cartagena, Murcia"}
+};
+function setLang(l){
+  document.documentElement.lang=l;
+  document.documentElement.dir='ltr';
+  const t=T[l];
+  document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(t&&t[k])el.textContent=t[k]});
+  document.querySelectorAll('.lbtn').forEach(b=>{
+    const btnLang=b.getAttribute('onclick').match(/setLang\('(\w+)'\)/)?.[1];
+    b.classList.toggle('active',btnLang===l);
+  });
+}
+
+/* ─── DEFAULT DATA ─── */
+let menuItems=[
+  {id:'k1',name:'Kebab Clásico',price:7,cat:'kebab',emoji:'🥙',desc:'Pan de pita, carne a la brasa, lechuga, tomate, cebolla y salsa de yogur.',img:''},
+  {id:'k2',name:'Kebab Mixto',price:8.5,cat:'kebab',emoji:'🥙',desc:'Mezcla de pollo y ternera, verduras frescas, salsa picante.',img:''},
+  {id:'k3',name:'Kebab Especial',price:9.5,cat:'kebab',emoji:'🥙',desc:'Carne premium, queso fundido, verduras asadas y salsa árabe.',img:''},
+  {id:'b1',name:'Burger Árabe',price:7.5,cat:'burgers',emoji:'🍔',desc:'Patty de ternera, queso, cebolla caramelizada, salsa harissa.',img:''},
+  {id:'f1',name:'Patatas Fritas',price:3,cat:'frites',emoji:'🍟',desc:'Patatas doradas con sal marina.',img:''},
+  {id:'f2',name:'Patatas Bravas',price:4,cat:'frites',emoji:'🧀',desc:'Patatas con salsa alioli y brava casera.',img:''},
+  {id:'d1',name:'Refresco',price:2,cat:'boissons',emoji:'🥤',desc:'Coca-Cola, Fanta o Sprite con hielo.',img:''},
+  {id:'d2',name:'Agua',price:1,cat:'boissons',emoji:'💧',desc:'Agua mineral fría.',img:''},
+  {id:'ds1',name:'Baklava',price:3.5,cat:'desserts',emoji:'🍯',desc:'Dulce árabe tradicional con miel y frutos secos.',img:''}
+];
+const COMBOS_DEFAULT=[
+  {id:'c1',name:'Kebab + Patatas + Refresco',desc:'Kebab clásico, patatas fritas y refresco a elegir.',price:11,discount:'-10%',emoji:'🥙🍟🥤'},
+  {id:'c2',name:'Duo Kebab',desc:'2 kebabs clásicos con patatas compartidas.',price:14,discount:'-8%',emoji:'🥙🥙'},
+  {id:'c3',name:'Family Box (4)',desc:'4 kebabs, 2 patatas grandes, 4 bebidas.',price:38,discount:'-15%',emoji:'👨‍👩‍👧‍👦'}
+];
+let combos=[...COMBOS_DEFAULT];
+let services=[
+  {id:'s1',icon:'🏠',name:'Comer en Sitio',desc:'Disfruta de nuestro local acogedor en el corazón de Cartagena.'},
+  {id:'s2',icon:'🚗',name:'Drive Disponible',desc:'Recoge tu pedido sin salir del coche, rápido y cómodo.'},
+  {id:'s3',icon:'📦',name:'Entrega sin Contacto',desc:'Pedido a domicilio seguro y sin contacto directo.'},
+  {id:'s4',icon:'🥙',name:'Kebab Artesanal',desc:'Carne a la brasa, ingredientes frescos, recetas tradicionales.'}
+];
+let gallery=[]; // {fbKey,url,caption}
+let scheduleData={};
+const DAYS=[{k:'sat',l:'Sáb'},{k:'sun',l:'Dom'},{k:'mon',l:'Lun'},{k:'tue',l:'Mar'},{k:'wed',l:'Mié'},{k:'thu',l:'Jue'},{k:'fri',l:'Vie'}];
+DAYS.forEach(d=>{
+  const isMondayTuesday=(d.k==='mon'||d.k==='tue');
+  scheduleData[d.k]={open:isMondayTuesday?'19:30':'12:30',close:'02:00',active:true};
+});
+
+/* ─── RENDER MENU ─── */
+let mfilter='all';
+function renderMenu(){
+  const items=mfilter==='all'?menuItems:menuItems.filter(i=>i.cat===mfilter);
+  document.getElementById('mg').innerHTML=items.map(it=>`
+    <div class="mc">
+      <div class="mci">${it.img?`<img src="${it.img}" alt="${it.name}" onerror="this.style.display='none'"/>`:''}
+        <span class="emo" ${it.img?'style="display:none"':''}>${it.emoji}</span></div>
+      <div class="mcb">
+        <div class="mccat">${it.cat}</div>
+        <div class="mcn">${it.name}</div>
+        <div class="mcd">${it.desc}</div>
+        <div class="mcf">
+          <div class="mcp">${it.price} €</div>
+          <button class="ob" onclick="openOM('${it.id}','${it.name.replace(/'/g,"\\'")}','${it.desc.replace(/'/g,"\\'")}',${it.price})">Pedir</button>
+        </div>
+      </div>
+    </div>`).join('');
+}
+function filterMenu(cat,btn){
+  mfilter=cat;
+  document.querySelectorAll('.fb').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  renderMenu();
+}
+
+/* ─── RENDER COMBOS ─── */
+function renderCombos(){
+  const el=document.getElementById('cg');
+  if(!combos.length){el.innerHTML='<p style="color:var(--gray);opacity:.6;grid-column:1/-1;text-align:center;padding:40px">Sin combos disponibles.</p>';return;}
+  el.innerHTML=combos.map(c=>`
+    <div class="cc">
+      <div class="cci"><span>${c.emoji||'🍔'}</span><div class="ccb">${c.discount||''}</div></div>
+      <div class="ccbody"><div class="ccn">${c.name}</div><div class="ccd">${c.desc}</div><div class="ccp">${Number(c.price).toLocaleString()} €</div></div>
+      <div style="padding:0 18px 18px"><button class="ob" style="width:100%" onclick="openOM('combo_${c.id}','${c.name.replace(/'/g,"\\'")}','${c.desc.replace(/'/g,"\\'")}',${c.price})">Pedir</button></div>
+    </div>`).join('');
+}
+
+/* ─── RENDER SERVICES ─── */
+function renderServices(){
+  const g=document.getElementById('sv-grid');
+  if(!services.length){g.innerHTML='<p style="color:var(--gray);opacity:.6;grid-column:1/-1">Sin servicios añadidos.</p>';return}
+  g.innerHTML=services.map(s=>`
+    <div class="sv-card">
+      <span class="sv-ico">${s.icon}</span>
+      <div class="sv-name">${s.name}</div>
+      <div class="sv-desc">${s.desc}</div>
+    </div>`).join('');
+}
+
+/* ─── RENDER GALLERY ─── */
+function renderGallery(){
+  const g=document.getElementById('gg');
+  if(!gallery.length){g.innerHTML=`<div class="ge">📸 Las fotos se mostrarán aquí.</div>`;return}
+  g.innerHTML=gallery.map(img=>{
+    if(img.isVideo){
+      return `<video class="gi" src="${img.url}" controls muted playsinline
+        style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;cursor:pointer"
+        onerror="this.parentElement&&this.remove()"></video>`;
+    }
+    return `<img class="gi" src="${img.url}" alt="${img.caption||'Arabian Carthago'}"
+      onclick="document.getElementById('lb-img').src='${img.url}';document.getElementById('lb').classList.add('open')"
+      onerror="this.remove()"/>`;
+  }).join('');
+}
+
+/* ─── APPLY SETTINGS — updates every element on the live site ─── */
+function applySettings(s){
+  if(!s) return;
+
+  /* ── Phone ── */
+  const ph = (s.phone||'868630507').trim();
+  const fmtPh = ph.replace(/^(\+34|0034)?(\d{3})(\d{3})(\d{3})$/,'$2 $3 $4').trim()||ph;
+  const telHref = 'tel:+34'+ph.replace(/^(\+34|0034)/,'').replace(/\s/g,'');
+  ['h-phone','h-phone2'].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=fmtPh});
+  const cph=document.getElementById('ct-ph');
+  if(cph){cph.textContent=fmtPh;cph.href=telHref;}
+  const hpl=document.getElementById('h-ph-link');
+  if(hpl) hpl.href=telHref;
+  document.querySelectorAll('.ncta').forEach(a=>{a.href=telHref;});
+
+  /* ── Address ── */
+  if(s.addr){
+    const el=document.getElementById('ct-addr');
+    if(el) el.textContent=s.addr;
+  }
+
+  /* ── Plus Code / Map ── */
+  if(s.pluscode){
+    const el=document.getElementById('ct-pc');
+    if(el) el.textContent=s.pluscode;
+    // Also update the Maps link
+    const mapLink=document.querySelector('.mapbox a');
+    if(mapLink) mapLink.href='https://maps.google.com/?q='+encodeURIComponent(s.pluscode);
+  }
+
+  /* ── Hours ── */
+  if(s.hours){
+    const hr=document.getElementById('ct-hr');
+    if(hr) hr.textContent=s.hours;
+    const hh=document.getElementById('h-hours');
+    if(hh) hh.textContent=s.hours;
+  }
+
+  /* ── Hero image ── */
+  if(s.heroImg){
+    document.getElementById('hero-img-wrap').innerHTML=
+      `<img class="hero-img" src="${s.heroImg}" alt="Arabian Carthago" onerror="this.style.display='none'"/>`;
+  }
+
+  /* ── About image ── */
+  if(s.aboutImg){
+    const av=document.getElementById('about-vis');
+    if(av){av.style.backgroundImage=`url(${s.aboutImg})`;av.style.backgroundSize='cover';av.style.backgroundPosition='center';}
+  }
+
+  /* ── About text ── */
+  if(s.about1){const el=document.getElementById('ap1');if(el)el.textContent=s.about1;}
+  if(s.about2){const el=document.getElementById('ap2');if(el)el.textContent=s.about2;}
+
+  /* ── Social links — topbar icons ── */
+  const igBtn=document.getElementById('ig-topbtn');
+  const ttBtn=document.getElementById('tt-topbtn');
+  if(igBtn){ igBtn.href=s.ig||'#'; igBtn.style.display=s.ig?'flex':'none'; }
+  if(ttBtn){ ttBtn.href=s.tt||'#'; ttBtn.style.display=s.tt?'flex':'none'; }
+
+  /* ── Social links — footer AND contact section ── */
+  let socialHTML='';
+  if(s.fb)  socialHTML+=`<a href="${s.fb}"  target="_blank" style="color:rgba(255,255,255,.55);font-size:13px;text-decoration:none">📘 Facebook</a>`;
+  if(s.ig)  socialHTML+=`<a href="${s.ig}"  target="_blank" style="color:rgba(255,255,255,.55);font-size:13px;text-decoration:none">📸 Instagram</a>`;
+  if(s.tt)  socialHTML+=`<a href="${s.tt}"  target="_blank" style="color:rgba(255,255,255,.55);font-size:13px;text-decoration:none">🎵 TikTok</a>`;
+  if(s.wa)  socialHTML+=`<a href="https://wa.me/${s.wa}" target="_blank" style="color:rgba(255,255,255,.55);font-size:13px;text-decoration:none">💬 WhatsApp</a>`;
+  const sc=document.getElementById('fsocials');
+  if(sc) sc.innerHTML=socialHTML;
+  // Also show socials in contact section
+  let ctSocials=document.getElementById('ct-socials');
+  if(!ctSocials){
+    ctSocials=document.createElement('div');
+    ctSocials.id='ct-socials';
+    ctSocials.style.cssText='display:flex;gap:12px;flex-wrap:wrap;margin-top:16px;';
+    const cti=document.querySelector('.cti');
+    if(cti) cti.appendChild(ctSocials);
+  }
+  ctSocials.innerHTML=socialHTML;
+
+  /* ── Pre-fill admin form fields ── */
+  const fieldMap={
+    sn:'name', sph:'phone', sad:'addr', spc:'pluscode', shr:'hours',
+    sa1:'about1', sa2:'about2', sfb:'fb', sig:'ig', stt:'tt', swa:'wa',
+    shi:'heroImg', sai:'aboutImg'
+  };
+  Object.entries(fieldMap).forEach(([elId,key])=>{
+    const el=document.getElementById(elId);
+    if(el && s[key]!==undefined && s[key]!==null && s[key]!=='') el.value=s[key];
+  });
+  if(s.heroImg){
+    const p=document.getElementById('shp');
+    if(p){p.src=s.heroImg;p.style.display='block';}
+  }
+}
+
+/* ─── FIREBASE LOAD (REST fetch — no SDK needed) ─── */
+async function fetchAll(){
+  try{
+    const [menu,svcs,gal,sett,sched,cbs,calEvs]=await Promise.all([
+      FB.once('menu'),
+      FB.once('services'),
+      FB.once('gallery'),
+      FB.once('settings'),
+      FB.once('schedule'),
+      FB.once('combos'),
+      FB.once('cal_events')
+    ]);
+    if(menu){menuItems=Array.isArray(menu)?menu.filter(Boolean):Object.values(menu)}
+    if(svcs){services=Array.isArray(svcs)?svcs.filter(Boolean):Object.values(svcs)}
+    if(gal){gallery=Object.entries(gal).map(([k,v])=>({...v,fbKey:k}))}else{gallery=[]}
+    if(sett){applySettings(sett)}
+    if(sched){scheduleData={...scheduleData,...sched}}
+    if(cbs){combos=Array.isArray(cbs)?cbs.filter(Boolean):Object.values(cbs)}
+    if(calEvs){calEvents=Array.isArray(calEvs)?calEvs.filter(Boolean):Object.values(calEvs)}
+    rebuildFilterBtns();renderMenu();renderCombos();renderServices();renderGallery();
+    renderMenuEditor();renderSvcAdmin();renderGalAdmin();renderComboEditor();renderCalAdmin();renderCalendar();
+  }catch(e){
+    /* silent — localStorage fallback already loaded data */
+  }
+}
+function loadAll(){
+  // Real-time listeners for key paths
+  FB.on('menu', d=>{ if(d){menuItems=Array.isArray(d)?d.filter(Boolean):Object.values(d);rebuildFilterBtns();renderMenu();renderMenuEditor();}});
+  FB.on('services', d=>{ if(d){services=Array.isArray(d)?d.filter(Boolean):Object.values(d);renderServices();renderSvcAdmin();}});
+  FB.on('gallery', d=>{ gallery=d?Object.entries(d).map(([k,v])=>({...v,fbKey:k})):[];renderGallery();renderGalAdmin();});
+  FB.on('settings', d=>{ if(d)applySettings(d);});
+  FB.on('schedule', d=>{ if(d)scheduleData={...scheduleData,...d};});
+  FB.on('combos', d=>{ if(d){combos=Array.isArray(d)?d.filter(Boolean):Object.values(d);renderCombos();renderComboEditor();}});
+  FB.on('cal_events', d=>{ if(d){calEvents=Array.isArray(d)?d.filter(Boolean):Object.values(d);}else{calEvents=[];}renderCalendar();renderCalAdmin();});
+}
+
+/* ─── ORDER MODAL + CART ─── */
+let curOrder={};
+let cart=[]; // [{id,name,desc,price,qty}]
+
+function renderCart(){
+  const cartWrap=document.getElementById('cart-items');
+  const cartSec=document.getElementById('cart-section');
+  if(!cartWrap||!cartSec) return;
+  if(!cart.length){cartSec.style.display='none';return;}
+  cartSec.style.display='block';
+  cartWrap.innerHTML=cart.map((c,i)=>`
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid #EEE;font-size:13px">
+      <div>
+        <span style="font-weight:700">${c.name}</span>
+        <span style="color:var(--gray);margin-left:6px">${c.price} DZD</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <button onclick="cartQty(${i},-1)" style="background:var(--red);color:#fff;border:none;width:24px;height:24px;border-radius:50%;cursor:pointer;font-weight:800;font-size:14px;line-height:1">−</button>
+        <span style="font-weight:800;min-width:18px;text-align:center">${c.qty}</span>
+        <button onclick="cartQty(${i},1)" style="background:var(--orange);color:#fff;border:none;width:24px;height:24px;border-radius:50%;cursor:pointer;font-weight:800;font-size:14px;line-height:1">+</button>
+      </div>
+    </div>`).join('');
+  const total=cart.reduce((s,c)=>s+c.price*c.qty,0);
+  document.getElementById('cart-total').textContent=total.toLocaleString()+' €';
+  document.getElementById('o-q').closest('.fg').style.display='none'; // hide single qty when cart active
+}
+
+function cartQty(idx,delta){
+  cart[idx].qty=Math.max(0,cart[idx].qty+delta);
+  if(cart[idx].qty===0) cart.splice(idx,1);
+  renderCart();
+}
+
+function openOM(id,name,desc,price){
+  curOrder={id,name,desc,price};
+  // Add to cart
+  const existing=cart.find(c=>c.id===id);
+  if(existing){ existing.qty++; }
+  else { cart.push({id,name,desc,price:Number(price),qty:1}); }
+  // Update modal title to "Your Order"
+  document.getElementById('om-t').textContent='🛒 Tu Carrito';
+  document.getElementById('om-d').textContent=`${name} añadido — Total: ${cart.reduce((s,c)=>s+c.price*c.qty,0).toLocaleString()} €`;
+  document.getElementById('o-ok').style.display='none';
+  document.getElementById('of').reset();
+  renderCart();
+  document.getElementById('om').classList.add('open');
+}
+async function submitOrder(e){
+  e.preventDefault();
+  // Validate reCAPTCHA
+  const rcResp = typeof grecaptcha !== 'undefined' ? grecaptcha.getResponse() : '';
+  const rcErr = document.getElementById('recaptcha-err');
+  if(!rcResp){
+    if(rcErr) rcErr.style.display='block';
+    return;
+  }
+  if(rcErr) rcErr.style.display='none';
+  const now=new Date();
+  const dk=now.toISOString().split('T')[0];
+  // Build items list (cart if multiple, or single)
+  let itemLabel = curOrder.name;
+  let totalPrice = curOrder.price;
+  if(cart.length > 0){
+    itemLabel = cart.map(c=>`${c.name} ×${c.qty}`).join(', ');
+    totalPrice = cart.reduce((s,c)=>s+c.price*c.qty,0);
+  }
+  const order={name:document.getElementById('o-n').value,phone:document.getElementById('o-p').value,address:document.getElementById('o-a').value,qty:parseInt(document.getElementById('o-q').value)||1,item:itemLabel,price:totalPrice,notes:document.getElementById('o-no').value,status:'pending',timestamp:now.toISOString(),date:dk,time:now.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'})};
+  await FB.push(`orders/${dk}`,order);
+  // Reset cart after order
+  cart=[];renderCart();
+  document.getElementById('o-ok').style.display='block';
+  // Reset reCAPTCHA
+  if(typeof grecaptcha !== 'undefined') grecaptcha.reset();
+  setTimeout(()=>document.getElementById('om').classList.remove('open'),2800);
+  toast('✅ ¡Pedido enviado!');
+}
+
+/* ─── CONTACT ─── */
+async function sendMsg(e){
+  e.preventDefault();
+  const now=new Date();
+  await FB.push('messages',{name:document.getElementById('m-n').value,phone:document.getElementById('m-p').value,text:document.getElementById('m-t').value,timestamp:now.toISOString(),date:now.toISOString().split('T')[0]});
+  document.getElementById('m-ok').style.display='block';
+  document.getElementById('mf').reset();
+  toast('✅ ¡Mensaje enviado!');
+}
+
+/* ─── ADMIN AUTH (local credentials, no Firebase Auth) ─── */
+const CRED_HASH='aab242c9c961550b337b11d50853a8ebc13391621f6066f7f85c2639007ecf70'; // sha256(pockito_admin:Pockito2026) — change via Settings
+let loginAttempts=0, lockedUntil=0, sessionActive=false;
+
+async function sha256(str){
+  const buf=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(str));
+  return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');
+}
+
+function openAdmin(){
+  document.getElementById('ap').style.display='block';
+  if(sessionActive){
+    document.getElementById('alog').style.display='none';
+    document.getElementById('adash').style.display='block';
+    initDash();
+  } else {
+    document.getElementById('alog').style.display='flex';
+    document.getElementById('adash').style.display='none';
+  }
+}
+
+async function adminLogin(){
+  const now=Date.now();
+  const er=document.getElementById('lerr');
+  const lm=document.getElementById('lockout-msg');
+  er.style.display='none';lm.style.display='none';
+  if(now<lockedUntil){lm.style.display='block';return;}
+
+  const u=(document.getElementById('lu').value||'').trim();
+  const p=(document.getElementById('lp').value||'').trim();
+  if(!u||!p){er.style.display='block';return;}
+  const h=await sha256(u+':'+p);
+
+  // ALWAYS check hardcoded hash first — this can never be blocked
+  if(h===CRED_HASH){
+    _doLogin();return;
+  }
+
+  // Then check in-memory updated hash (set after password change this session)
+  if(window._CRED_HASH && h===window._CRED_HASH){
+    _doLogin();return;
+  }
+
+  // Then check localStorage (previously saved password change)
+  const savedCreds=LS.get('admin_creds');
+  if(savedCreds && savedCreds.hash && h===savedCreds.hash){
+    _doLogin();return;
+  }
+
+  // Finally try Firebase (cross-device sync)
+  try{
+    const fbCreds=await _fbReq('admin_creds','GET');
+    if(fbCreds && fbCreds.hash){
+      LS.set('admin_creds',fbCreds);
+      window._CRED_HASH=fbCreds.hash;
+      if(h===fbCreds.hash){_doLogin();return;}
+    }
+  }catch(e){}
+
+  // All checks failed — wrong credentials
+  loginAttempts++;
+  er.style.display='block';
+  if(loginAttempts>=3){
+    lockedUntil=Date.now()+30000;
+    lm.style.display='block';er.style.display='none';
+    let rem=30;
+    const iv=setInterval(()=>{rem--;document.getElementById('lock-sec').textContent=rem;if(rem<=0){clearInterval(iv);lm.style.display='none';loginAttempts=0;}},1000);
+  }
+}
+
+function _doLogin(){
+  loginAttempts=0;sessionActive=true;
+  document.getElementById('alog').style.display='none';
+  document.getElementById('adash').style.display='block';
+  initDash();
+}
+
+function adminLogout(){
+  sessionActive=false;
+  document.getElementById('adash').style.display='none';
+  document.getElementById('alog').style.display='flex';
+  document.getElementById('lu').value='';
+  document.getElementById('lp').value='';
+  toast('👋 Sesión cerrada.');
+}
+async function initDash(){
+  document.getElementById('od').value=new Date().toISOString().split('T')[0];
+  await fetchAll();
+  renderSchedule();
+  await loadOrders();
+}
+
+/* ─── ADMIN TABS ─── */
+async function aTab(tab){
+  document.querySelectorAll('.asec').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.atab').forEach(t=>t.classList.remove('active'));
+  document.getElementById(`sec-${tab}`).classList.add('active');
+  document.getElementById(`tab-${tab}`).classList.add('active');
+  if(tab==='orders') await loadOrders();
+  if(tab==='msgs') await loadMsgs();
+  if(tab==='gallery-adm'){await fetchAll();renderGalAdmin();}
+  if(tab==='svc-adm'){await fetchAll();renderSvcAdmin();}
+  if(tab==='combos-edit'){await fetchAll();renderComboEditor();}
+  if(tab==='calendar'){await fetchAll();renderCalAdmin();}
+}
+
+/* ─── ADMIN ORDERS ─── */
+function renderOrderRows(ords, d){
+  const tb=document.getElementById('otb');
+  document.getElementById('st-t').textContent=ords.length;
+  document.getElementById('st-p').textContent=ords.filter(o=>o.status==='pending').length;
+  document.getElementById('st-c').textContent=ords.filter(o=>o.status==='confirmed').length;
+  document.getElementById('st-k').textContent=ords.filter(o=>o.status==='cancelled').length;
+  if(!ords.length){tb.innerHTML=`<tr><td colspan="9" style="text-align:center;opacity:.35;padding:28px">No hay pedidos para esta fecha.</td></tr>`;return}
+  tb.innerHTML=ords.map((o,i)=>`
+    <tr>
+      <td style="color:var(--orange);font-weight:800">#${i+1}</td>
+      <td>${o.time||'--'}</td>
+      <td style="font-weight:700">${o.name||'—'}</td>
+      <td><a href="tel:${o.phone}" style="color:var(--orange)">${o.phone||'—'}</a></td>
+      <td>${o.item||'—'} ×${o.qty||1}<br><span style="color:var(--terracotta);font-weight:800">${((o.price||0)*(o.qty||1)).toLocaleString()} €</span></td>
+      <td style="font-size:11px">${o.address||'—'}</td>
+      <td style="font-size:11px;max-width:130px">${o.notes||'—'}</td>
+      <td><span class="sb ${oStat(o.status)}">${oLbl(o.status)}</span></td>
+      <td><div class="abs">
+        <button class="ab ab-ok" onclick="setOS('${d}','${o.key}','confirmed')">✅ Confirmar</button>
+        <button class="ab ab-w" onclick="setOS('${d}','${o.key}','waiting')">⏳ Espera</button>
+        <button class="ab ab-d" onclick="delO('${d}','${o.key}')">🗑 Borrar</button>
+      </div></td>
+    </tr>`).join('');
+}
+
+async function loadOrders(){
+  const d=document.getElementById('od').value; if(!d)return;
+  const tb=document.getElementById('otb');
+  /* Show cached data instantly */
+  const cached=LS.get(`orders/${d}`)||{};
+  const cachedOrds=Object.entries(cached).map(([k,v])=>({key:k,...v})).sort((a,b)=>(b.timestamp||'').localeCompare(a.timestamp||''));
+  if(cachedOrds.length) renderOrderRows(cachedOrds,d);
+  else tb.innerHTML=`<tr><td colspan="9" style="text-align:center;opacity:.35;padding:18px">⏳ Cargando...</td></tr>`;
+  /* Then try Firebase */
+  try{
+    const data=await FB.once(`orders/${d}`)||{};
+    const ords=Object.entries(data).map(([k,v])=>({key:k,...v})).sort((a,b)=>(b.timestamp||'').localeCompare(a.timestamp||''));
+    renderOrderRows(ords,d);
+  }catch(e){ /* already showing cached */ }
+}
+function oStat(s){return{pending:'sp',confirmed:'sc2',cancelled:'sk',waiting:'sw'}[s]||'sp'}
+function oLbl(s){return{pending:'Pendiente',confirmed:'Confirmado',cancelled:'Cancelado',waiting:'En espera'}[s]||s}
+async function setOS(date,key,status){await FB.update(`orders/${date}/${key}`,{status});toast('✅ '+oLbl(status))}
+async function delO(date,key){if(!confirm('Supprimer ?'))return;await FB.remove(`orders/${date}/${key}`);toast('🗑 Supprimée.')}
+
+/* ─── ADMIN MESSAGES ─── */
+function renderMsgRows(msgs){
+  const tb=document.getElementById('mtb');
+  if(!msgs.length){tb.innerHTML=`<tr><td colspan="5" style="text-align:center;opacity:.35;padding:28px">Aucun message.</td></tr>`;return}
+  tb.innerHTML=msgs.map(m=>`
+    <tr>
+      <td style="font-size:10px;opacity:.5">${m.date||'--'}</td>
+      <td style="font-weight:700">${m.name||'—'}</td>
+      <td><a href="tel:${m.phone}" style="color:var(--orange)">${m.phone||'—'}</a></td>
+      <td style="max-width:220px;font-size:12px">${m.text||'—'}</td>
+      <td><button class="ab ab-d" onclick="delM('${m.key}')">🗑</button></td>
+    </tr>`).join('');
+}
+
+async function loadMsgs(){
+  const tb=document.getElementById('mtb');
+  const cached=LS.get('messages')||{};
+  const cachedMsgs=Object.entries(cached).map(([k,v])=>({key:k,...v})).sort((a,b)=>(b.timestamp||'').localeCompare(a.timestamp||''));
+  if(cachedMsgs.length) renderMsgRows(cachedMsgs);
+  else tb.innerHTML=`<tr><td colspan="5" style="text-align:center;opacity:.35;padding:18px">⏳ Cargando...</td></tr>`;
+  try{
+    const data=await FB.once('messages')||{};
+    const msgs=Object.entries(data).map(([k,v])=>({key:k,...v})).sort((a,b)=>(b.timestamp||'').localeCompare(a.timestamp||''));
+    renderMsgRows(msgs);
+  }catch(e){ /* showing cached */ }
+}
+async function delM(key){await FB.remove(`messages/${key}`);toast('🗑 Message supprimé.')}
+
+/* ─── ADMIN MENU EDITOR ─── */
+function renderMenuEditor(){
+  document.getElementById('meg').innerHTML=menuItems.map(it=>`
+    <div class="mec">
+      ${it.img?`<img class="mth" src="${it.img}" onerror="this.style.display='none'"/>`:''}
+      <div style="font-size:28px;margin-bottom:5px">${it.emoji}</div>
+      <h4>${it.name}</h4>
+      <div class="mp">${it.price} DZD · <span style="opacity:.5;font-size:10px">${it.cat}</span></div>
+      <div style="font-size:11px;color:rgba(255,255,255,.35);margin-bottom:10px">${it.desc}</div>
+      <button class="eb" onclick="openItemModal('${it.id}')">✏️ Modifier</button>
+      <button class="db" onclick="delItem('${it.id}')">🗑</button>
+    </div>`).join('');
+}
+
+function rebuildFilterBtns(){
+  // Collect all unique categories from menu
+  const cats = [...new Set(menuItems.map(i=>i.cat))];
+  const mf = document.querySelector('.mf');
+  if(!mf) return;
+  const allBtn = `<button class="fb active" onclick="filterMenu('all',this)" data-i18n="f_all">Tout</button>`;
+  const catBtns = cats.map(c=>`<button class="fb" onclick="filterMenu('${c}',this)">${c.charAt(0).toUpperCase()+c.slice(1).replace(/_/g,' ')}</button>`).join('');
+  mf.innerHTML = allBtn + catBtns;
+  // Also update the select dropdown with any new custom categories
+  const sel = document.getElementById('im-c');
+  if(!sel) return;
+  cats.forEach(c=>{
+    if(![...sel.options].some(o=>o.value===c)){
+      const opt=document.createElement('option');opt.value=c;opt.textContent=c.charAt(0).toUpperCase()+c.slice(1).replace(/_/g,' ');
+      sel.insertBefore(opt, sel.querySelector('option[value="__new__"]'));
+    }
+  });
+}
+
+function openItemModal(id){
+  const it=id?menuItems.find(i=>i.id===id):null;
+  document.getElementById('im-t').textContent=it?'Modifier le plat':'Añadir un plato';
+  document.getElementById('im-id').value=id||'';
+  document.getElementById('im-n').value=it?.name||'';
+  document.getElementById('im-pr').value=it?.price||'';
+  // Set category: if it exists in select use it, else add it
+  const sel=document.getElementById('im-c');
+  const newInp=document.getElementById('im-c-new');
+  if(it?.cat){
+    const opt=[...sel.options].find(o=>o.value===it.cat);
+    if(opt){ sel.value=it.cat; newInp.style.display='none'; }
+    else { sel.value='__new__'; newInp.value=it.cat; newInp.style.display='block'; }
+  } else { sel.value='burgers'; newInp.style.display='none'; }
+  document.getElementById('im-e').value=it?.emoji||'🍽';
+  document.getElementById('im-d').value=it?.desc||'';
+  document.getElementById('im-i').value=it?.img||'';
+  const p=document.getElementById('im-ip');p.src=it?.img||'';p.style.display=it?.img?'block':'none';
+  document.getElementById('im-f').value='';
+  document.getElementById('imod').classList.add('open');
+}
+function prvItemImg(v){const p=document.getElementById('im-ip');p.src=v;p.style.display=v?'block':'none'}
+function fileItemImg(e){
+  const f=e.target.files[0];if(!f)return;
+  const r=new FileReader();r.onload=ev=>{document.getElementById('im-i').value=ev.target.result;prvItemImg(ev.target.result)};r.readAsDataURL(f);
+}
+async function saveItem(){
+  const id=document.getElementById('im-id').value;
+  const sel=document.getElementById('im-c');
+  const newInp=document.getElementById('im-c-new');
+  const cat = sel.value==='__new__' ? (newInp.value||'').trim().toLowerCase().replace(/\s+/g,'_') : sel.value;
+  if(!cat){toast('❌ Catégorie requise.');return}
+  const item={id:id||'i_'+Date.now(),name:document.getElementById('im-n').value,price:parseInt(document.getElementById('im-pr').value)||0,cat,emoji:document.getElementById('im-e').value||'🍽',desc:document.getElementById('im-d').value,img:document.getElementById('im-i').value||''};
+  if(!item.name||!item.price){toast('❌ Nombre y precio requeridos.');return}
+  if(id){const idx=menuItems.findIndex(i=>i.id===id);if(idx!==-1)menuItems[idx]=item;else menuItems.push(item)}else menuItems.push(item);
+  document.getElementById('imod').classList.remove('open');
+  rebuildFilterBtns();renderMenuEditor();renderMenu();
+  await FB.set('menu',menuItems);
+  toast('✅ Menu mis à jour !');
+}
+async function delItem(id){
+  if(!confirm('¿Eliminar este plato?'))return;
+  menuItems=menuItems.filter(i=>i.id!==id);
+  rebuildFilterBtns();renderMenuEditor();renderMenu();
+  await FB.set('menu',menuItems);
+  toast('🗑 Plato eliminado.');
+}
+
+/* ─── ADMIN GALLERY ─── */
+let pending=[];
+function previewImgs(e){
+  const files=Array.from(e.target.files);
+  const wrap=document.getElementById('uprevs');
+  files.forEach(f=>{
+    const isVideo = f.type.startsWith('video/');
+    const r=new FileReader();
+    r.onload=ev=>{
+      const id='p'+Date.now()+Math.random();
+      pending.push({id,dataUrl:ev.target.result,caption:'',isVideo});
+      const div=document.createElement('div');div.className='upi';div.id=id;
+      if(isVideo){
+        div.innerHTML=`<video src="${ev.target.result}" style="width:100%;height:100%;object-fit:cover;border-radius:8px" muted playsinline></video>
+          <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:24px;pointer-events:none">▶️</div>
+          <button class="uprm" onclick="rmPend('${id}')">✕</button>
+          <input class="ucap" placeholder="Légende..." oninput="updCap('${id}',this.value)"/>`;
+      } else {
+        div.innerHTML=`<img src="${ev.target.result}"/><button class="uprm" onclick="rmPend('${id}')">✕</button><input class="ucap" placeholder="Légende..." oninput="updCap('${id}',this.value)"/>`;
+      }
+      wrap.appendChild(div);
+    };r.readAsDataURL(f);
+  });e.target.value='';
+}
+function rmPend(id){pending=pending.filter(p=>p.id!==id);const el=document.getElementById(id);if(el)el.remove()}
+function updCap(id,v){const p=pending.find(p=>p.id===id);if(p)p.caption=v}
+async function uploadImgs(){
+  if(!pending.length){toast('❌ Aucun fichier sélectionné.');return}
+  const bar=document.getElementById('upbar'),fill=document.getElementById('upfill');
+  bar.style.display='block';fill.style.width='0%';
+  let done=0;
+  for(const p of pending){
+    await FB.push('gallery',{url:p.dataUrl,caption:p.caption,isVideo:!!p.isVideo,ts:Date.now()});
+    done++;fill.style.width=`${Math.round(done/pending.length*100)}%`;
+  }
+  pending=[];document.getElementById('uprevs').innerHTML='';document.getElementById('fimg').value='';
+  setTimeout(()=>{bar.style.display='none';fill.style.width='0%'},1200);
+  toast('✅ '+done+' fichier(s) publié(s) !');
+}
+function renderGalAdmin(){
+  const g=document.getElementById('gag');
+  if(!gallery.length){g.innerHTML='<p style="color:rgba(255,255,255,.3);font-size:13px">Aucun fichier.</p>';return}
+  g.innerHTML=gallery.map(img=>`
+    <div class="gth">
+      ${img.isVideo
+        ? `<video src="${img.url}" style="width:100%;height:100%;object-fit:cover" muted playsinline onerror="this.parentElement.remove()"></video>
+           <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:22px;pointer-events:none">▶️</div>`
+        : `<img src="${img.url}" alt="${img.caption||''}" onerror="this.parentElement.remove()"/>`}
+      <div class="gcap">${img.caption||'Sans légende'}</div>
+      <button class="gdel" onclick="delImg('${img.fbKey}')">🗑</button>
+    </div>`).join('');
+}
+async function delImg(key){if(!confirm('Supprimer ?'))return;await FB.remove(`gallery/${key}`);toast('🗑 Photo supprimée.')}
+
+/* ─── ADMIN SERVICES ─── */
+function renderSvcAdmin(){
+  const g=document.getElementById('svag');
+  if(!services.length){g.innerHTML='<p style="color:rgba(255,255,255,.3);font-size:13px">Aucun service.</p>';return}
+  g.innerHTML=services.map(s=>`
+    <div class="svac">
+      <div style="font-size:32px;margin-bottom:6px">${s.icon}</div>
+      <h4>${s.name}</h4><p>${s.desc}</p>
+      <div style="margin-top:10px;display:flex;gap:6px">
+        <button class="eb" onclick="openSvcModal('${s.id}')">✏️</button>
+        <button class="db" onclick="delSvc('${s.id}')">🗑</button>
+      </div>
+    </div>`).join('');
+}
+function openSvcModal(id){
+  const s=id?services.find(x=>x.id===id):null;
+  document.getElementById('sm-t').textContent=s?'Modifier le service':'Añadir un servicio';
+  document.getElementById('sm-id').value=id||'';
+  document.getElementById('sm-n').value=s?.name||'';
+  document.getElementById('sm-i').value=s?.icon||'⭐';
+  document.getElementById('sm-d').value=s?.desc||'';
+  document.getElementById('smod').classList.add('open');
+}
+async function saveSvc(){
+  const id=document.getElementById('sm-id').value;
+  const svc={id:id||'svc_'+Date.now(),name:document.getElementById('sm-n').value,icon:document.getElementById('sm-i').value||'⭐',desc:document.getElementById('sm-d').value};
+  if(!svc.name){toast('❌ Nom requis.');return}
+  if(id){const idx=services.findIndex(s=>s.id===id);if(idx!==-1)services[idx]=svc;else services.push(svc)}else services.push(svc);
+  document.getElementById('smod').classList.remove('open');
+  renderServices();renderSvcAdmin();
+  await FB.set('services',services);
+  toast('✅ ¡Servicio guardado!');
+}
+async function delSvc(id){
+  if(!confirm('Supprimer ?'))return;
+  services=services.filter(s=>s.id!==id);
+  renderServices();renderSvcAdmin();
+  await FB.set('services',services);
+  toast('🗑 Servicio eliminado.');
+}
+
+/* ─── ADMIN SCHEDULE ─── */
+function renderSchedule(){
+  document.getElementById('schg').innerHTML=DAYS.map(d=>{
+    const s=scheduleData[d.k]||{open:'11:00',close:'23:00',active:true};
+    return `<div class="schd ${s.active?'dopen':'dclosed'}" id="sd-${d.k}">
+      <div class="dname">${d.l}</div>
+      <input type="time" value="${s.open}" id="so-${d.k}"/>
+      <input type="time" value="${s.close}" id="sc-${d.k}"/>
+      <div class="stog" onclick="togDay('${d.k}')">${s.active?'✅ Ouvert':'❌ Fermé'}</div>
+    </div>`;
+  }).join('');
+}
+function togDay(k){scheduleData[k]=scheduleData[k]||{open:'11:00',close:'23:00',active:true};scheduleData[k].active=!scheduleData[k].active;renderSchedule()}
+async function saveSchedule(){
+  DAYS.forEach(d=>{if(!scheduleData[d.k])scheduleData[d.k]={active:true};scheduleData[d.k].open=document.getElementById(`so-${d.k}`).value;scheduleData[d.k].close=document.getElementById(`sc-${d.k}`).value});
+  await FB.set('schedule',scheduleData);toast('✅ ¡Horario guardado!');
+}
+
+/* ─── ADMIN SETTINGS ─── */
+function prvHero(e){
+  const f=e.target.files[0];if(!f)return;
+  const r=new FileReader();r.onload=ev=>{const p=document.getElementById('shp');p.src=ev.target.result;p.style.display='block';document.getElementById('shi').value=ev.target.result};r.readAsDataURL(f);
+}
+
+/* ─── SAVE CREDENTIALS — synced to Firebase immediately, all devices updated ─── */
+async function saveCredentials(){
+  const newUser = (document.getElementById('new-user').value||'').trim();
+  const newPass = (document.getElementById('new-pass').value||'').trim();
+  const confPass= (document.getElementById('conf-pass').value||'').trim();
+  const msg = document.getElementById('cred-msg');
+  const show = (txt,col)=>{ msg.textContent=txt; msg.style.color=col; msg.style.display='block'; };
+
+  if(!newUser && !newPass){ show('Remplissez au moins un champ.','#FACC15'); return; }
+  if(newPass && newPass.length < 8){ show('Le mot de passe doit faire au moins 8 caractères.','#FF6B6B'); return; }
+  if(newPass && newPass !== confPass){ show('Les mots de passe ne correspondent pas.','#FF6B6B'); return; }
+
+  const finalUser = newUser || document.getElementById('cur-user').value || 'pockito_admin';
+  const finalPass = newPass || prompt('Entrez votre mot de passe actuel pour confirmer:','');
+  if(!finalPass){ show('Mot de passe requis.','#FF6B6B'); return; }
+
+  show('⏳ Sauvegarde en cours...','#FACC15');
+  const newHash = await sha256(finalUser+':'+finalPass);
+  const credData = { user: finalUser, hash: newHash, updatedAt: new Date().toISOString() };
+
+  // 1. Update in-memory immediately (current session)
+  window._CRED_HASH = newHash;
+  // 2. Save to localStorage (this device, offline fallback)
+  LS.set('admin_creds', credData);
+  // 3. Save to Firebase (ALL devices get updated immediately)
+  try {
+    await _fbReq('admin_creds', 'PUT', credData);
+    show('✅ ¡Credenciales actualizadas! sur tous les appareils !','#22C55E');
+  } catch(e) {
+    show('⚠️ Sauvegardé localement. Reconnectez-vous à Internet pour synchroniser tous les appareils.','#FACC15');
+  }
+
+  document.getElementById('new-user').value='';
+  document.getElementById('new-pass').value='';
+  document.getElementById('conf-pass').value='';
+  document.getElementById('cur-user').value=finalUser;
+}
+async function saveSettings(){
+  const g = id => (document.getElementById(id)||{}).value||'';
+  const s = {
+    name:     g('sn'),
+    phone:    g('sph'),
+    addr:     g('sad'),
+    pluscode: g('spc'),
+    hours:    g('shr'),
+    heroImg:  g('shi'),
+    aboutImg: g('sai'),
+    about1:   g('sa1'),
+    about2:   g('sa2'),
+    fb:       g('sfb'),
+    ig:       g('sig'),
+    tt:       g('stt'),
+    wa:       g('swa')
+  };
+  // Apply to live site immediately (no waiting for Firebase)
+  applySettings(s);
+  // Save to localStorage instantly
+  LS.set('settings', s);
+  // Try Firebase in background
+  try { await FB.set('settings', s); toast('✅ Ajustes sauvegardés et synchronisés !'); }
+  catch(e)      { toast('✅ Ajustes sauvegardés localement !'); }
+}
+
+/* ─── ADMIN COMBOS ─── */
+function renderComboEditor(){
+  const el=document.getElementById('combos-meg');
+  if(!el) return;
+  if(!combos.length){el.innerHTML='<p style="color:rgba(255,255,255,.3);font-size:13px">Aucun combo. Ajoutez-en un !</p>';return;}
+  el.innerHTML=combos.map(c=>`
+    <div class="mec">
+      <div style="font-size:32px;margin-bottom:6px">${c.emoji||'🎁'}</div>
+      <h4>${c.name}</h4>
+      <div class="mp">${Number(c.price).toLocaleString()} DZD · <span style="color:var(--green);font-size:11px">${c.discount||''}</span></div>
+      <div style="font-size:11px;color:rgba(255,255,255,.35);margin-bottom:10px">${c.desc}</div>
+      <button class="eb" onclick="openComboModal('${c.id}')">✏️ Modifier</button>
+      <button class="db" onclick="delCombo('${c.id}')">🗑</button>
+    </div>`).join('');
+}
+function openComboModal(id){
+  const c=id?combos.find(x=>x.id===id):null;
+  document.getElementById('combo-mod-t').textContent=c?'Modifier le combo':'Añadir un combo';
+  document.getElementById('combo-id').value=id||'';
+  document.getElementById('combo-n').value=c?.name||'';
+  document.getElementById('combo-pr').value=c?.price||'';
+  document.getElementById('combo-disc').value=c?.discount||'';
+  document.getElementById('combo-emo').value=c?.emoji||'🎁';
+  document.getElementById('combo-d').value=c?.desc||'';
+  document.getElementById('combo-mod').classList.add('open');
+}
+async function saveCombo(){
+  const id=document.getElementById('combo-id').value;
+  const c={
+    id: id||'cb_'+Date.now(),
+    name: document.getElementById('combo-n').value,
+    price: parseInt(document.getElementById('combo-pr').value)||0,
+    discount: document.getElementById('combo-disc').value,
+    emoji: document.getElementById('combo-emo').value||'🎁',
+    desc: document.getElementById('combo-d').value
+  };
+  if(!c.name||!c.price){toast('❌ Nombre y precio requeridos.');return;}
+  if(id){const idx=combos.findIndex(x=>x.id===id);if(idx!==-1)combos[idx]=c;else combos.push(c);}else combos.push(c);
+  document.getElementById('combo-mod').classList.remove('open');
+  renderComboEditor(); renderCombos();
+  await FB.set('combos',combos);
+  toast('✅ ¡Combo guardado!');
+}
+async function delCombo(id){
+  if(!confirm('¿Eliminar este combo?'))return;
+  combos=combos.filter(c=>c.id!==id);
+  renderComboEditor(); renderCombos();
+  await FB.set('combos',combos);
+  toast('🗑 Combo eliminado.');
+}
+
+/* ─── CALENDAR ─── */
+let calEvents=[]; // [{id,title,date,time,desc,emoji}]
+let calCurrentDate=new Date();
+
+const CAL_MONTH_NAMES=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+const CAL_DAY_NAMES=['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'];
+
+function renderCalendar(){
+  const grid=document.getElementById('cal-grid');
+  const label=document.getElementById('cal-month-label');
+  const evList=document.getElementById('cal-events-list');
+  if(!grid) return;
+  const y=calCurrentDate.getFullYear(), m=calCurrentDate.getMonth();
+  label.textContent=`${CAL_MONTH_NAMES[m]} ${y}`;
+  // Day headers
+  let html=CAL_DAY_NAMES.map(d=>`<div class="cal-day-hdr">${d}</div>`).join('');
+  // First day of month
+  const firstDay=new Date(y,m,1).getDay();
+  const daysInMonth=new Date(y,m+1,0).getDate();
+  const today=new Date();
+  // Blank cells
+  for(let i=0;i<firstDay;i++) html+=`<div class="cal-day other-month"></div>`;
+  // Day cells
+  for(let d=1;d<=daysInMonth;d++){
+    const dateStr=`${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+    const isToday=today.getFullYear()===y&&today.getMonth()===m&&today.getDate()===d;
+    const evs=calEvents.filter(e=>e.date===dateStr);
+    const hasEv=evs.length>0;
+    html+=`<div class="cal-day${isToday?' today':''}${hasEv?' has-event':''}" ${hasEv?`onclick="showDayEvents('${dateStr}')" title="${evs.map(e=>e.title).join(', ')}"`:''}>`
+      +`<div>${d}</div>${hasEv?`<div class="cal-dot"></div>`:''}`;
+    html+=`</div>`;
+  }
+  grid.innerHTML=html;
+  // Render upcoming events list
+  const upcoming=calEvents.filter(e=>e.date>=today.toISOString().split('T')[0]).sort((a,b)=>a.date.localeCompare(b.date)).slice(0,6);
+  evList.innerHTML=upcoming.length
+    ? upcoming.map(e=>`<div class="cal-evt-card">
+        <div class="ced">${e.emoji||'📅'} ${e.date}${e.time?' · '+e.time:''}</div>
+        <div class="cen">${e.title}</div>
+        <div class="cet">${e.desc||''}</div>
+      </div>`).join('')
+    : `<p style="color:var(--gray);text-align:center;opacity:.5;font-size:13px">No hay próximos eventos.</p>`;
+}
+
+function showDayEvents(dateStr){
+  const evs=calEvents.filter(e=>e.date===dateStr);
+  if(!evs.length) return;
+  alert(evs.map(e=>`${e.emoji||'📅'} ${e.title}\n${e.desc||''}`).join('\n\n'));
+}
+
+function calPrev(){calCurrentDate=new Date(calCurrentDate.getFullYear(),calCurrentDate.getMonth()-1,1);renderCalendar();}
+function calNext(){calCurrentDate=new Date(calCurrentDate.getFullYear(),calCurrentDate.getMonth()+1,1);renderCalendar();}
+
+/* Calendar admin */
+function renderCalAdmin(){
+  const el=document.getElementById('cal-admin-list');
+  if(!el) return;
+  if(!calEvents.length){el.innerHTML='<p style="color:rgba(255,255,255,.3);font-size:13px">No hay eventos.</p>';return;}
+  const sorted=[...calEvents].sort((a,b)=>a.date.localeCompare(b.date));
+  el.innerHTML=sorted.map(e=>`
+    <div class="mec">
+      <div style="font-size:28px;margin-bottom:4px">${e.emoji||'📅'}</div>
+      <h4>${e.title}</h4>
+      <div class="mp" style="font-size:11px">${e.date}${e.time?' · '+e.time:''}</div>
+      <div style="font-size:11px;color:rgba(255,255,255,.35);margin-bottom:10px">${e.desc||''}</div>
+      <button class="eb" onclick="openCalModal('${e.id}')">✏️</button>
+      <button class="db" onclick="delCalEvent('${e.id}')">🗑</button>
+    </div>`).join('');
+}
+function openCalModal(id){
+  const ev=id?calEvents.find(x=>x.id===id):null;
+  document.getElementById('cal-mod-t').textContent=ev?'Modifier l\'événement':'Añadir un evento';
+  document.getElementById('cal-ev-id').value=id||'';
+  document.getElementById('cal-ev-title').value=ev?.title||'';
+  document.getElementById('cal-ev-date').value=ev?.date||new Date().toISOString().split('T')[0];
+  document.getElementById('cal-ev-time').value=ev?.time||'';
+  document.getElementById('cal-ev-desc').value=ev?.desc||'';
+  document.getElementById('cal-ev-emoji').value=ev?.emoji||'📅';
+  document.getElementById('cal-mod').classList.add('open');
+}
+async function saveCalEvent(){
+  const id=document.getElementById('cal-ev-id').value;
+  const ev={
+    id: id||'ev_'+Date.now(),
+    title: document.getElementById('cal-ev-title').value,
+    date: document.getElementById('cal-ev-date').value,
+    time: document.getElementById('cal-ev-time').value,
+    desc: document.getElementById('cal-ev-desc').value,
+    emoji: document.getElementById('cal-ev-emoji').value||'📅'
+  };
+  if(!ev.title||!ev.date){toast('❌ Título y fecha requeridos.');return;}
+  if(id){const idx=calEvents.findIndex(x=>x.id===id);if(idx!==-1)calEvents[idx]=ev;else calEvents.push(ev);}else calEvents.push(ev);
+  document.getElementById('cal-mod').classList.remove('open');
+  renderCalAdmin(); renderCalendar();
+  await FB.set('cal_events',calEvents);
+  toast('✅ ¡Evento guardado!');
+}
+async function delCalEvent(id){
+  if(!confirm('¿Eliminar este evento?'))return;
+  calEvents=calEvents.filter(e=>e.id!==id);
+  renderCalAdmin(); renderCalendar();
+  await FB.set('cal_events',calEvents);
+  toast('🗑 Evento eliminado.');
+}
+
+/* ─── TOAST ─── */
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3000)}
+
+/* ─── EXPOSE GLOBALS ─── */
+window.setLang=setLang;window.filterMenu=filterMenu;window.openOM=openOM;window.cartQty=cartQty;
+window.submitOrder=submitOrder;window.sendMsg=sendMsg;
+window.openAdmin=openAdmin;window.adminLogin=adminLogin;window.adminLogout=adminLogout;window._doLogin=_doLogin;
+window.aTab=aTab;window.loadOrders=loadOrders;window.setOS=setOS;window.delO=delO;
+window.openItemModal=openItemModal;window.prvItemImg=prvItemImg;window.fileItemImg=fileItemImg;
+window.saveItem=saveItem;window.delItem=delItem;
+window.openComboModal=openComboModal;window.saveCombo=saveCombo;window.delCombo=delCombo;
+window.previewImgs=previewImgs;window.rmPend=rmPend;window.updCap=updCap;
+window.uploadImgs=uploadImgs;window.delImg=delImg;
+window.openSvcModal=openSvcModal;window.saveSvc=saveSvc;window.delSvc=delSvc;
+window.togDay=togDay;window.saveSchedule=saveSchedule;
+window.calPrev=calPrev;window.calNext=calNext;window.showDayEvents=showDayEvents;
+window.openCalModal=openCalModal;window.saveCalEvent=saveCalEvent;window.delCalEvent=delCalEvent;
+window.prvHero=prvHero;window.saveSettings=saveSettings;window.saveCredentials=saveCredentials;window.delM=delM;
+
+/* ─── INIT ─── */
+document.addEventListener('DOMContentLoaded',()=>{
+  setLang('es');
+  rebuildFilterBtns(); renderMenu(); renderCombos(); renderServices(); renderCalendar();
+
+  // Hide topbar social buttons until settings loaded
+  const igBtn=document.getElementById('ig-topbtn');
+  const ttBtn=document.getElementById('tt-topbtn');
+  if(igBtn) igBtn.style.display='none';
+  if(ttBtn) ttBtn.style.display='none';
+
+  // Apply cached settings INSTANTLY from localStorage (before any network call)
+  const cachedSettings = LS.get('settings');
+  if(cachedSettings) applySettings(cachedSettings);
+
+  // Pre-fill current username field
+  const savedCreds = LS.get('admin_creds');
+  const curUserEl = document.getElementById('cur-user');
+  if(curUserEl) curUserEl.value = (savedCreds&&savedCreds.user)||'carthago_admin';
+
+  // ── Triple-tap footer title to open admin ──
+  let tapCount=0, tapTimer=null;
+  const footerTitle=document.getElementById('footer-title-trigger');
+  if(footerTitle){
+    footerTitle.addEventListener('click',()=>{
+      tapCount++;
+      clearTimeout(tapTimer);
+      if(tapCount>=3){ tapCount=0; openAdmin(); return; }
+      tapTimer=setTimeout(()=>{ tapCount=0; },700);
+    });
+  }
+
+  // Then load from Firebase in background (will override if fresher)
+  loadAll();
+});
+document.addEventListener('keydown',e=>{
+  if(e.key==='Enter'){
+    const alog=document.getElementById('alog');
+    if(alog&&alog.style.display!=='none'&&alog.style.display!=='')adminLogin();
+  }
+});
+</script>
+</body>
+</html>
