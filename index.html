@@ -1545,6 +1545,28 @@ async function submitOrder(e){
   if(typeof grecaptcha !== 'undefined') grecaptcha.reset();
   setTimeout(()=>document.getElementById('om').classList.remove('open'),2800);
   toast('✅ ¡Pedido enviado!');
+  // ── Order confirmation sound ──
+  playOrderSound();
+}
+
+function playOrderSound(){
+  try{
+    const ctx = new (window.AudioContext||window.webkitAudioContext)();
+    const t = ctx.currentTime;
+    // Three rising tones — cheerful "ding ding ding"
+    [[0, 880, 0.18],[0.18, 1100, 0.18],[0.36, 1320, 0.28]].forEach(([when, freq, dur])=>{
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.connect(gain); gain.connect(ctx.destination);
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(freq, t+when);
+      gain.gain.setValueAtTime(0, t+when);
+      gain.gain.linearRampToValueAtTime(0.35, t+when+0.02);
+      gain.gain.exponentialRampToValueAtTime(0.001, t+when+dur);
+      osc.start(t+when);
+      osc.stop(t+when+dur+0.05);
+    });
+  }catch(e){}
 }
 
 /* ─── CONTACT ─── */
