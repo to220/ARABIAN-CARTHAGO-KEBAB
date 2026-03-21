@@ -8,6 +8,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet"/>
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
 <style>
 :root{
@@ -311,10 +313,82 @@ tr:hover td{background:rgba(255,255,255,.03)}
 .cal-evt-card .ced{font-size:11px;color:var(--orange);font-weight:800;text-transform:uppercase;letter-spacing:1px}
 .cal-evt-card .cen{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1px;margin:3px 0}
 .cal-evt-card .cet{font-size:12px;color:var(--gray);line-height:1.5}
+
+/* ── CUSTOM CURSOR ── */
+body{cursor:none;overflow-x:hidden}
+#cursor{position:fixed;width:12px;height:12px;background:var(--terracotta);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);transition:width .2s,height .2s,background .2s;mix-blend-mode:multiply}
+#cursor-ring{position:fixed;width:40px;height:40px;border:1.5px solid rgba(192,98,42,.5);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:width .3s,height .3s,border-color .3s}
+body:has(a:hover) #cursor,body:has(button:hover) #cursor{width:20px;height:20px;background:var(--gold,#D4A853)}
+body:has(a:hover) #cursor-ring,body:has(button:hover) #cursor-ring{width:60px;height:60px;border-color:var(--gold,#D4A853)}
+a,button{cursor:none!important}
+
+/* ── PAGE LOADER ── */
+#loader{position:fixed;inset:0;background:var(--dark);z-index:99997;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:20px}
+.loader-name{font-family:'Playfair Display',serif;font-size:clamp(32px,7vw,72px);color:#fff;font-weight:700;letter-spacing:5px;overflow:hidden}
+.loader-name span{display:inline-block;transform:translateY(100%)}
+.loader-bar-wrap{width:200px;height:2px;background:rgba(255,255,255,.1);border-radius:2px;overflow:hidden}
+.loader-bar{height:100%;background:linear-gradient(90deg,var(--terracotta),#D4A853);width:0%;border-radius:2px}
+.loader-sub{font-family:'Inter',sans-serif;font-size:11px;letter-spacing:4px;color:rgba(255,255,255,.3);text-transform:uppercase}
+
+/* ── HERO CANVAS ── */
+#hero-canvas{position:absolute;inset:0;width:100%;height:100%;opacity:.65;pointer-events:none}
+
+/* ── HERO ANIMATED STATES ── */
+.htag{opacity:0;transform:translateY(20px)}
+.htitle-line{display:block;overflow:hidden}
+.htitle-word{display:inline-block;transform:translateY(110%)}
+.hero-ph,.hero-img{opacity:0;transform:scale(.85)}
+.hsub{opacity:0;transform:translateY(20px)}
+.hbtns{opacity:0;transform:translateY(20px)}
+.hinfo{opacity:0}
+
+/* ── SCROLL INDICATOR ── */
+.scroll-ind{position:absolute;bottom:80px;left:50%;transform:translateX(-50%);z-index:3;display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0}
+.scroll-ind span{font-size:10px;letter-spacing:3px;color:rgba(255,255,255,.3);font-family:'Inter',sans-serif;text-transform:uppercase}
+.scroll-line{width:1px;height:50px;background:linear-gradient(var(--terracotta),transparent);animation:scrollPulse 2s ease-in-out infinite}
+@keyframes scrollPulse{0%,100%{transform:scaleY(1);opacity:.6}50%{transform:scaleY(.5);opacity:1}}
+
+/* ── NAV GLASS ON SCROLL ── */
+nav.scrolled{background:rgba(255,255,255,.97)!important;box-shadow:0 4px 30px rgba(0,0,0,.1)!important}
+
+/* ── NAV LINK UNDERLINE ANIMATION ── */
+.nlinks a{position:relative;padding-bottom:4px}
+.nlinks a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1.5px;background:var(--terracotta);transition:width .3s cubic-bezier(.4,0,.2,1)}
+.nlinks a:hover::after{width:100%}
+
+/* ── CARD HOVER UPGRADES ── */
+.sv-card{transition:transform .4s cubic-bezier(.34,1.56,.64,1),box-shadow .4s}
+.sv-card:hover{transform:translateY(-10px) scale(1.02)!important}
+.sv-ico{transition:transform .4s cubic-bezier(.34,1.56,.64,1);display:block}
+.sv-card:hover .sv-ico{transform:scale(1.2) rotate(-5deg)}
+.mc{transition:transform .4s cubic-bezier(.34,1.56,.64,1),box-shadow .4s}
+.mc:hover{transform:translateY(-8px) rotate(.4deg)!important}
+.mci img{transition:transform .6s cubic-bezier(.4,0,.2,1)}
+.mc:hover .mci img{transform:scale(1.08)}
+.cc{transition:transform .4s cubic-bezier(.34,1.56,.64,1),box-shadow .4s,border-color .3s}
+.cc:hover{transform:translateY(-8px)!important}
+.gi{transition:transform .5s cubic-bezier(.4,0,.2,1),box-shadow .5s}
+.gi:hover{transform:scale(1.04) rotate(-.4deg)!important}
+.af{transition:transform .3s,background .3s,border-color .3s;border:1px solid transparent}
+.af:hover{transform:translateY(-3px)}
+.afi{transition:transform .4s cubic-bezier(.34,1.56,.64,1)}
+.af:hover .afi{transform:scale(1.3) rotate(-5deg)}
+.ci{transition:transform .3s,background .3s,border-color .3s}
+.ci:hover{transform:translateX(6px)}
+.cal-evt-card{transition:transform .3s,box-shadow .3s}
+.cal-evt-card:hover{transform:translateX(6px)}
 </style>
 </head>
 <body>
 
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+<div id="loader">
+  <div class="loader-name"><span id="ln1">Arabian</span></div>
+  <div class="loader-name"><span id="ln2">Carthago</span></div>
+  <div class="loader-bar-wrap"><div class="loader-bar" id="lbar"></div></div>
+  <div class="loader-sub">Cartagena · Murcia</div>
+</div>
 <div class="toast" id="toast"></div>
 
 <!-- LIGHTBOX -->
@@ -405,6 +479,7 @@ tr:hover td{background:rgba(255,255,255,.03)}
 
 <!-- HERO -->
 <section id="home">
+  <canvas id="hero-canvas"></canvas>
   <div class="hi">
     <div class="htag" data-i18n="hero_tag">🥙 AUTÉNTICO · ARTESANAL · CARTAGENA</div>
     <h1 class="htitle">Arabian <span>Carthago</span></h1>
@@ -419,6 +494,10 @@ tr:hover td{background:rgba(255,255,255,.03)}
       <span>📍 Cartagena, Murcia</span>
       <span>📞 <span id="h-phone2">868 63 05 07</span></span>
     </div>
+  </div>
+  <div class="scroll-ind">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
   </div>
 </section>
 
@@ -1994,6 +2073,174 @@ document.addEventListener('keydown',e=>{
     if(alog&&alog.style.display!=='none'&&alog.style.display!=='')adminLogin();
   }
 });
+
+/* ═══════════════════════════════════════════
+   ANIMATIONS — GSAP + CANVAS EMBER PARTICLES
+═══════════════════════════════════════════ */
+
+/* ── Custom Cursor ── */
+(function(){
+  const cur = document.getElementById('cursor');
+  const curRing = document.getElementById('cursor-ring');
+  let mouseX=0,mouseY=0,ringX=0,ringY=0;
+  document.addEventListener('mousemove',e=>{
+    mouseX=e.clientX; mouseY=e.clientY;
+    if(cur){cur.style.left=mouseX+'px';cur.style.top=mouseY+'px';}
+  });
+  (function animRing(){
+    ringX+=(mouseX-ringX)*.12; ringY+=(mouseY-ringY)*.12;
+    if(curRing){curRing.style.left=ringX+'px';curRing.style.top=ringY+'px';}
+    requestAnimationFrame(animRing);
+  })();
+})();
+
+/* ── Ember Particle Canvas ── */
+(function(){
+  const canvas=document.getElementById('hero-canvas');
+  if(!canvas)return;
+  const ctx=canvas.getContext('2d');
+  let W,H,particles=[];
+  function resize(){W=canvas.width=canvas.offsetWidth;H=canvas.height=canvas.offsetHeight;}
+  resize();
+  window.addEventListener('resize',resize);
+  class P{
+    constructor(){
+      this.x=Math.random()*W; this.y=H+Math.random()*80;
+      this.size=Math.random()*3+.5;
+      this.vy=-(Math.random()*1.5+.4); this.vx=(Math.random()-.5)*.8;
+      this.life=1; this.decay=Math.random()*.006+.003;
+      this.color='hsl('+(Math.random()*30+8)+',90%,60%)';
+    }
+    update(){this.x+=this.vx;this.y+=this.vy;this.life-=this.decay;this.vx+=(Math.random()-.5)*.06;}
+    draw(){
+      ctx.save();ctx.globalAlpha=this.life*.55;ctx.fillStyle=this.color;
+      ctx.shadowBlur=12;ctx.shadowColor=this.color;
+      ctx.beginPath();ctx.arc(this.x,this.y,this.size,0,Math.PI*2);ctx.fill();ctx.restore();
+    }
+  }
+  (function tick(){
+    ctx.clearRect(0,0,W,H);
+    if(Math.random()<.35)particles.push(new P());
+    particles=particles.filter(p=>p.life>0);
+    particles.forEach(p=>{p.update();p.draw();});
+    requestAnimationFrame(tick);
+  })();
+})();
+
+/* ── Page Loader ── */
+(function(){
+  gsap.registerPlugin(ScrollTrigger);
+  const ln1=document.getElementById('ln1');
+  const ln2=document.getElementById('ln2');
+  const lbar=document.getElementById('lbar');
+  const loaderEl=document.getElementById('loader');
+  if(!loaderEl)return;
+  gsap.timeline()
+    .to([ln1,ln2],{y:'0%',duration:.8,ease:'power4.out',stagger:.15})
+    .to(lbar,{width:'100%',duration:1.2,ease:'power2.inOut'},'-=.4')
+    .to(loaderEl,{opacity:0,duration:.6,ease:'power2.in',delay:.3})
+    .set(loaderEl,{display:'none'})
+    .call(heroIn);
+})();
+
+/* ── Hero Entrance ── */
+function heroIn(){
+  gsap.timeline()
+    .to('.htag',     {opacity:1,y:0,duration:.7,ease:'power3.out'})
+    .to('.htitle-word',{y:'0%',duration:1,ease:'power4.out',stagger:.08},'-=.3')
+    .to(['.hero-ph','.hero-img'],{opacity:1,scale:1,duration:.9,ease:'back.out(1.4)'},'-=.5')
+    .to('.hsub',     {opacity:1,y:0,duration:.7,ease:'power3.out'},'-=.5')
+    .to('.hbtns',    {opacity:1,y:0,duration:.7,ease:'power3.out'},'-=.5')
+    .to('.hinfo',    {opacity:1,duration:.6,ease:'power2.out'},'-=.4')
+    .to('.scroll-ind',{opacity:1,duration:.6},'-=.3');
+  gsap.to(['.hero-ph','.hero-img'],{y:-10,duration:3,ease:'sine.inOut',yoyo:true,repeat:-1,delay:2});
+}
+
+/* ── Scroll Animations ── */
+window.addEventListener('load',()=>{
+
+  // Section headers
+  gsap.utils.toArray('.sh').forEach(el=>{
+    gsap.from(el.children,{
+      scrollTrigger:{trigger:el,start:'top 80%',toggleActions:'play none none none'},
+      opacity:0,y:40,duration:.8,ease:'power3.out',stagger:.15
+    });
+  });
+
+  // Service cards
+  gsap.utils.toArray('.sv-card').forEach((el,i)=>{
+    gsap.from(el,{
+      scrollTrigger:{trigger:el,start:'top 85%',toggleActions:'play none none none'},
+      opacity:0,y:60,scale:.92,duration:.7,ease:'back.out(1.4)',delay:i*.07
+    });
+  });
+
+  // Menu cards
+  gsap.utils.toArray('.mc').forEach((el,i)=>{
+    gsap.from(el,{
+      scrollTrigger:{trigger:el,start:'top 88%',toggleActions:'play none none none'},
+      opacity:0,y:70,duration:.7,ease:'power3.out',delay:i*.06
+    });
+  });
+
+  // Combo cards
+  gsap.utils.toArray('.cc').forEach((el,i)=>{
+    gsap.from(el,{
+      scrollTrigger:{trigger:el,start:'top 88%',toggleActions:'play none none none'},
+      opacity:0,x:i%2===0?-60:60,duration:.8,ease:'power3.out',delay:i*.08
+    });
+  });
+
+  // About
+  gsap.from('.av',{scrollTrigger:{trigger:'#about',start:'top 75%'},opacity:0,x:-80,duration:1,ease:'power3.out'});
+  gsap.from('.at',{scrollTrigger:{trigger:'#about',start:'top 75%'},opacity:0,x:80,duration:1,ease:'power3.out',delay:.15});
+  gsap.utils.toArray('.af').forEach((el,i)=>{
+    gsap.from(el,{scrollTrigger:{trigger:el,start:'top 88%'},opacity:0,y:30,duration:.6,ease:'back.out(1.4)',delay:i*.1});
+  });
+
+  // Gallery
+  gsap.utils.toArray('.gi').forEach((el,i)=>{
+    gsap.from(el,{scrollTrigger:{trigger:el,start:'top 90%'},opacity:0,scale:.85,duration:.6,ease:'power3.out',delay:i*.05});
+  });
+
+  // Contact rows
+  gsap.utils.toArray('.ci').forEach((el,i)=>{
+    gsap.from(el,{scrollTrigger:{trigger:el,start:'top 88%'},opacity:0,x:-40,duration:.6,ease:'power3.out',delay:i*.1});
+  });
+
+  // Section titles
+  gsap.utils.toArray('.stitle').forEach(el=>{
+    gsap.from(el,{scrollTrigger:{trigger:el,start:'top 85%'},opacity:0,y:30,duration:.8,ease:'power3.out'});
+  });
+
+  // Nav glass on scroll
+  window.addEventListener('scroll',()=>{
+    document.querySelector('nav')?.classList.toggle('scrolled',window.scrollY>60);
+  });
+
+  // Hero canvas parallax
+  gsap.to('#hero-canvas',{
+    scrollTrigger:{trigger:'#home',start:'top top',end:'bottom top',scrub:true},
+    y:120,opacity:.3
+  });
+});
+
+/* ── Hero Title Word Split ── */
+document.addEventListener('DOMContentLoaded',()=>{
+  const title=document.querySelector('.htitle');
+  if(!title)return;
+  const html=title.innerHTML;
+  // Split preserving <span> tag for colored word
+  title.innerHTML=html.replace(/([^<]+)(<span>)([^<]+)(<\/span>)/,(m,before,os,inner,oe)=>{
+    const b=before.trim().split(' ').map(w=>`<span class="htitle-line"><span class="htitle-word">${w}</span></span>`).join(' ');
+    const s=inner.trim().split(' ').map(w=>`<span class="htitle-line"><span class="htitle-word" style="color:#E8A87C">${w}</span></span>`).join(' ');
+    return b+' '+s;
+  });
+  if(!document.querySelector('.htitle-word')){
+    title.innerHTML=title.textContent.trim().split(' ').map(w=>`<span class="htitle-line"><span class="htitle-word">${w}</span></span>`).join(' ');
+  }
+});
+
 </script>
 </body>
 </html>
