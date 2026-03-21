@@ -2,7 +2,7 @@
 <html lang="es" dir="ltr">
 <head>
 <meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
 <title>ARABIAN CARTHAGO KEBAB – Kebab & Fast Food · Cartagena</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -377,6 +377,149 @@ nav.scrolled{background:rgba(255,255,255,.97)!important;box-shadow:0 4px 30px rg
 .ci:hover{transform:translateX(6px)}
 .cal-evt-card{transition:transform .3s,box-shadow .3s}
 .cal-evt-card:hover{transform:translateX(6px)}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE — PHONE & DESKTOP FIXES
+═══════════════════════════════════════════ */
+
+/* ── LARGE DESKTOP (1400px+) ── */
+@media(min-width:1400px){
+  section{padding:110px 8%}
+  .mg{grid-template-columns:repeat(3,1fr)}
+  .cg{grid-template-columns:repeat(3,1fr)}
+}
+
+/* ── TABLET (768px–1024px) ── */
+@media(max-width:1024px){
+  nav{top:32px;padding:12px 4%}
+  .nlinks{gap:14px}
+  .nlinks a{font-size:12px}
+  .ncta{padding:9px 16px;font-size:12px}
+  section{padding:70px 4%}
+  .mg{grid-template-columns:repeat(2,1fr)}
+  .cg{grid-template-columns:repeat(2,1fr)}
+  .ag{gap:40px}
+  .ctg{gap:36px}
+}
+
+/* ── MOBILE (max 768px) ── */
+@media(max-width:768px){
+
+  /* Lang bar */
+  #lang-bar{padding:6px 12px;gap:6px;justify-content:flex-start}
+  .lbtn{font-size:12px;padding:4px 10px}
+  #social-topbar{margin-left:auto!important}
+  #social-topbar a{display:none!important} /* hide social buttons on mobile to save space */
+
+  /* Nav */
+  nav{top:32px;padding:12px 5%}
+  .nl{font-size:18px}
+  .ncta{display:none} /* hidden — use mobile menu instead */
+
+  /* Hero */
+  #home{padding:70px 16px 60px;min-height:100svh}
+  .htag{font-size:9px;letter-spacing:2px;padding:5px 14px;margin-bottom:18px}
+  .htitle{font-size:clamp(38px,12vw,64px);letter-spacing:1px;line-height:1.05}
+  .hero-ph{width:clamp(130px,40vw,180px);height:clamp(130px,40vw,180px);font-size:56px}
+  .hero-img{width:clamp(130px,40vw,180px);height:clamp(130px,40vw,180px)}
+  .hsub{font-size:14px;margin:14px 0 24px;padding:0 8px}
+  .hbtns{gap:10px}
+  .bp,.bo{padding:12px 22px;font-size:14px}
+  .hinfo{gap:12px;font-size:11px;margin-top:28px}
+  .scroll-ind{bottom:60px}
+
+  /* Sections */
+  section{padding:60px 5%}
+  .sh{margin-bottom:40px}
+  .stitle{font-size:clamp(26px,7vw,38px)}
+  .ssub{font-size:14px}
+
+  /* Services */
+  .sv-grid{grid-template-columns:repeat(2,1fr);gap:14px}
+  .sv-card{padding:22px 14px}
+  .sv-ico{font-size:36px;margin-bottom:10px}
+  .sv-name{font-size:16px}
+  .sv-desc{font-size:12px}
+
+  /* Menu */
+  .mf{gap:6px;margin-bottom:24px}
+  .fb{padding:7px 14px;font-size:11px}
+  .mg{grid-template-columns:1fr;gap:18px}
+  .mci{height:180px}
+
+  /* Gallery */
+  .gg{grid-template-columns:repeat(2,1fr);gap:10px}
+  .gi{border-radius:12px}
+
+  /* Combos */
+  .cg{grid-template-columns:1fr;gap:18px}
+
+  /* About */
+  .ag{grid-template-columns:1fr;gap:32px}
+  .av{height:260px;border-radius:18px}
+  .avt{font-size:28px}
+  .at h2{font-size:28px}
+  .at p{font-size:13px}
+  .aff{grid-template-columns:1fr 1fr;gap:10px}
+  .af{padding:12px}
+  .afi{font-size:18px}
+  .afl{font-size:11px}
+  .afd{font-size:10px}
+
+  /* Contact */
+  .ctg{grid-template-columns:1fr;gap:32px}
+  .cti h3{font-size:22px;margin-bottom:18px}
+  .ci{padding:12px;gap:10px}
+  .cil{font-size:10px}
+  .civ{font-size:13px}
+  .mapbox{height:180px}
+
+  /* Footer */
+  footer{padding:28px 16px}
+  .fl{font-size:22px}
+  .flinks{gap:12px}
+
+  /* Order modal */
+  .mbox{padding:24px 18px;width:95%;border-radius:18px}
+  .mt{font-size:20px}
+
+  /* Calendar */
+  #cal-wrap{padding:0 4px}
+  .cal-day{font-size:11px;min-height:40px;padding:5px 2px}
+  .cal-evt-card{padding:10px 14px}
+
+  /* Events section buttons */
+  #events button{padding:7px 14px!important;font-size:13px!important}
+  #cal-month-label{font-size:20px!important}
+
+  /* Admin nav */
+  .anav{gap:5px;padding:10px 12px}
+  .atab{padding:6px 10px;font-size:11px}
+  .alogo{font-size:16px;margin-right:6px}
+  .alo{padding:6px 10px;font-size:11px}
+  .acon{padding:14px}
+
+  /* Toast */
+  .toast{right:12px;bottom:12px;left:12px;max-width:none;font-size:12px}
+}
+
+/* ── VERY SMALL PHONES (max 420px) ── */
+@media(max-width:420px){
+  .sv-grid{grid-template-columns:1fr}
+  .gg{grid-template-columns:1fr}
+  .aff{grid-template-columns:1fr}
+  .htitle{font-size:clamp(34px,11vw,52px)}
+  .bp,.bo{width:100%;text-align:center;justify-content:center}
+  .hbtns{flex-direction:column;align-items:center;gap:10px}
+  nav{padding:10px 4%}
+}
+
+/* ── CURSOR: HIDE ON TOUCH DEVICES ── */
+@media(hover:none){
+  #cursor,#cursor-ring{display:none!important}
+  body,a,button{cursor:auto!important}
+}
+
 </style>
 </head>
 <body>
