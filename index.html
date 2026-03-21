@@ -1658,6 +1658,9 @@ function _doLogin(){
 
 function adminLogout(){
   sessionActive=false;
+  if(_watcherInterval){ clearInterval(_watcherInterval); _watcherInterval=null; }
+  _lastKnownOrderCount=null;
+  const b=document.getElementById('admin-order-banner'); if(b)b.remove();
   document.getElementById('adash').style.display='none';
   document.getElementById('alog').style.display='flex';
   document.getElementById('lu').value='';
@@ -1669,7 +1672,102 @@ async function initDash(){
   await fetchAll();
   renderSchedule();
   await loadOrders();
+  startOrderWatcher();
 }
+
+/* ─── ADMIN ORDER WATCHER — checks every 60s for new orders ─── */
+let _watcherInterval = null;
+let _lastKnownOrderCount = null;
+
+function startOrderWatcher(){
+  if(_watcherInterval) clearInterval(_watcherInterval);
+  _watcherInterval = setInterval(checkNewOrders, 60000);
+  // Also do a first count silently right now (to set baseline)
+  getOrderCountToday().then(n => { _lastKnownOrderCount = n; });
+}
+
+async function getOrderCountToday(){
+  try{
+    const today = new Date().toISOString().split('T')[0];
+    const data = await FB.once(`orders/${today}`) || {};
+    return Object.keys(data).length;
+  }catch(e){ return _lastKnownOrderCount||0; }
+}
+
+async function checkNewOrders(){
+  const count = await getOrderCountToday();
+  if(_lastKnownOrderCount === null){ _lastKnownOrderCount = count; return; }
+  if(count > _lastKnownOrderCount){
+    const newCount = count - _lastKnownOrderCount;
+    _lastKnownOrderCount = count;
+    playAdminAlert(newCount);
+    showAdminBanner(newCount);
+    // Auto-refresh the orders table if on orders tab
+    const sec = document.getElementById('sec-orders');
+    if(sec && sec.classList.contains('active')) await loadOrders();
+  } else {
+    _lastKnownOrderCount = count;
+  }
+}
+
+function playAdminAlert(n){
+  try{
+    const ctx = new (window.AudioContext||window.webkitAudioContext)();
+    const t = ctx.currentTime;
+    // Urgent double-bell pattern: low→high→low→high
+    [[0,.06,520],[.1,.06,660],[.22,.06,520],[.32,.08,780]].forEach(([when,dur,freq])=>{
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.connect(gain); gain.connect(ctx.destination);
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(freq, t+when);
+      gain.gain.setValueAtTime(0, t+when);
+      gain.gain.linearRampToValueAtTime(0.5, t+when+0.01);
+      gain.gain.exponentialRampToValueAtTime(0.001, t+when+dur);
+      osc.start(t+when); osc.stop(t+when+dur+0.05);
+    });
+  }catch(e){}
+}
+
+function showAdminBanner(n){
+  // Remove old banner if exists
+  const old = document.getElementById('admin-order-banner');
+  if(old) old.remove();
+  const banner = document.createElement('div');
+  banner.id = 'admin-order-banner';
+  banner.style.cssText = `
+    position:fixed;top:0;left:0;right:0;z-index:99999;
+    background:linear-gradient(135deg,#C0622A,#D4A853);
+    color:#fff;text-align:center;padding:14px 20px;
+    font-family:'Inter',sans-serif;font-weight:700;font-size:15px;
+    box-shadow:0 4px 20px rgba(0,0,0,.3);
+    display:flex;align-items:center;justify-content:center;gap:12px;
+    animation:bannerSlide .4s cubic-bezier(.34,1.56,.64,1)
+  `;
+  banner.innerHTML = `
+    <span style="font-size:22px">🔔</span>
+    <span>${n} nuevo${n>1?'s':''} pedido${n>1?'s':''} recibido${n>1?'s':''}!</span>
+    <button onclick="document.getElementById('admin-order-banner').remove();aTab('orders')"
+      style="background:rgba(255,255,255,.25);border:none;color:#fff;padding:6px 16px;
+             border-radius:20px;cursor:pointer;font-weight:700;font-size:13px;margin-left:8px">
+      Ver ahora →
+    </button>
+    <button onclick="document.getElementById('admin-order-banner').remove()"
+      style="background:none;border:none;color:rgba(255,255,255,.7);font-size:20px;cursor:pointer;padding:0 4px">
+      ✕
+    </button>
+  `;
+  document.body.appendChild(banner);
+  // Auto-dismiss after 15 seconds
+  setTimeout(()=>{ const b=document.getElementById('admin-order-banner'); if(b)b.remove(); }, 15000);
+}
+
+// Inject banner animation keyframe
+(function(){
+  const s = document.createElement('style');
+  s.textContent = '@keyframes bannerSlide{from{transform:translateY(-100%);opacity:0}to{transform:translateY(0);opacity:1}}';
+  document.head.appendChild(s);
+})();
 
 /* ─── ADMIN TABS ─── */
 async function aTab(tab){
